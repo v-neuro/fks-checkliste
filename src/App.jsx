@@ -205,8 +205,8 @@ useEffect(() => {
     <div className="min-h-screen bg-slate-50 text-slate-900">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white/70 backdrop-blur border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-          <div>
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-start gap-3 sm:gap-5">
+          <div className="min-w-0 flex-1">
             <h1 className="text-2xl font-semibold tracking-tight">
               Funktionelle kognitive Störungen – Diagnostische Orientierungshilfe
             </h1>
@@ -256,6 +256,15 @@ useEffect(() => {
             </div>
           </div>
 
+          <img
+            src="/Logo.png"
+            alt="Verhaltensneurologie"
+            width="2953"
+            height="2362"
+            decoding="async"
+            fetchPriority="high"
+            className="w-24 sm:w-32 lg:w-40 h-auto shrink-0 rounded-xl"
+          />
         </div>
       </header>
 
@@ -284,7 +293,7 @@ useEffect(() => {
               const isNo = val === 0;
               const isActive = activeInfoId === it.id;
               const isVisible = isFull || !it.onlyFull;
-              const displayIndex = isFull
+              const displayIndex = isFull || !isVisible
                 ? idx + 1
                 : visibleItems.findIndex((item) => item.id === it.id) + 1;
 
