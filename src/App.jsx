@@ -127,6 +127,7 @@ useEffect(() => {
 }, [showLegal]);
 
   // Load persisted state
+  /* eslint-disable react-hooks/set-state-in-effect -- restore client-only state after SSR hydration */
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -135,14 +136,19 @@ useEffect(() => {
         if (saved?.selections) setSelections(saved.selections);
         if (typeof saved?.isFull === "boolean") setIsFull(saved.isFull);
       }
-    } catch {}
+    } catch {
+      // The checklist still works when a browser blocks local storage.
+    }
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Persist on change
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ selections, isFull }));
-    } catch {}
+    } catch {
+      // Persistence is optional; keep the in-memory checklist usable.
+    }
   }, [selections, isFull]);
 
   const visibleItems = useMemo(
@@ -171,6 +177,15 @@ useEffect(() => {
     setSelections((prev) => ({ ...prev, [id]: val }));
   };
 
+  const handleVersionToggle = () => {
+    const nextIsFull = !isFull;
+    setIsFull(nextIsFull);
+
+    if (!nextIsFull && ITEMS.find((item) => item.id === activeInfoId)?.onlyFull) {
+      setActiveInfoId(null);
+    }
+  };
+
   const handleReset = () => {
     const ok = window.confirm("Alle Antworten zurücksetzen?");
     if (!ok) return;
@@ -179,8 +194,11 @@ useEffect(() => {
   };
 
   const activeItem = useMemo(
-    () => (activeInfoId ? ITEMS.find((i) => i.id === activeInfoId) ?? null : null),
-    [activeInfoId]
+    () =>
+      activeInfoId
+        ? visibleItems.find((item) => item.id === activeInfoId) ?? null
+        : null,
+    [activeInfoId, visibleItems]
   );
 
   return (
@@ -197,7 +215,7 @@ useEffect(() => {
               <button
                 role="switch"
                 aria-checked={isFull}
-                onClick={() => setIsFull((v) => !v)}
+                onClick={handleVersionToggle}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ring-1 ring-inset ${
                   isFull ? "bg-blue-600 ring-blue-600" : "bg-slate-200 ring-slate-300"
                 } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
@@ -243,16 +261,40 @@ useEffect(() => {
 
       {/* Content */}
       <main className="max-w-5xl mx-auto px-4 py-8 sm:py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section
+          aria-labelledby="checklist-intro-title"
+          className="md:col-span-3 rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-sm ring-1 ring-black/5"
+        >
+          <h2 id="checklist-intro-title" className="text-lg font-semibold">
+            Interaktive FKS-Checkliste zur diagnostischen Orientierung
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            Diese Orientierungshilfe unterstützt Angehörige der Gesundheitsberufe bei der
+            klinischen Einschätzung funktioneller kognitiver Störungen (FKS). Die Kurzversion
+            umfasst sieben, die Vollversion elf Hinweise. Sie ergänzt die klinische Beurteilung,
+            ersetzt aber keine ärztliche Untersuchung oder Diagnostik.
+          </p>
+        </section>
+
         {/* Items */}
         <section ref={listContainerRef} className="relative md:col-span-3 space-y-6 md:pr-[380px]">
-          {visibleItems.map((it, idx) => {
+          {ITEMS.map((it, idx) => {
               const val = selections[it.id];
               const isYes = val === 1;
               const isNo = val === 0;
               const isActive = activeInfoId === it.id;
+              const isVisible = isFull || !it.onlyFull;
+              const displayIndex = isFull
+                ? idx + 1
+                : visibleItems.findIndex((item) => item.id === it.id) + 1;
 
               return (
-                <div key={it.id} ref={(el) => (itemRefs.current[it.id] = el)}>
+                <div
+                  key={it.id}
+                  ref={(el) => (itemRefs.current[it.id] = el)}
+                  className={isVisible ? undefined : "hidden"}
+                  aria-hidden={isVisible ? undefined : true}
+                >
                   {/* Item card (left, stable width on desktop) */}
                   <div
                     className={`md:flex-grow md:basis-0 min-w-0 rounded-2xl border p-5 shadow-sm hover:shadow-md transition-shadow ring-1 ${
@@ -265,7 +307,7 @@ useEffect(() => {
                       <div className="flex-1">
                         <div className="flex items-start gap-2">
                           <span className="mt-1 text-sm font-semibold text-slate-400 flex-none">
-                            {idx + 1}.
+                            {displayIndex}.
                           </span>
                           <p className="text-base sm:text-lg font-medium leading-snug flex-1 min-w-0">
                             {it.label}
@@ -318,8 +360,13 @@ useEffect(() => {
                     </div>
 
                     {/* Inline instruction on small screens */}
-                    {it.instruction && isActive && (
-                      <div className="mt-3 md:hidden rounded-xl border border-slate-200 bg-slate-50 p-3">
+                    {it.instruction && (
+                      <div
+                        className={`mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 md:hidden ${
+                          isActive ? "block" : "hidden"
+                        }`}
+                        aria-hidden={!isActive}
+                      >
                         <p className="text-xs uppercase tracking-wide text-slate-400 mb-1">Instruktion</p>
                         <InstructionText text={it.instruction} />
                       </div>

@@ -1,0 +1,19 @@
+{
+  "name": "FKS-Checkliste – Funktionelle kognitive Störungen",
+  "short_name": "FKS-Checkliste",
+  "description": "Interaktive diagnostische Orientierungshilfe für funktionelle kognitive Störungen.",
+  "lang": "de",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "/Logo.png",
+      "sizes": "2953x2362",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
