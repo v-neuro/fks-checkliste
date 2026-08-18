@@ -71,7 +71,7 @@ function InstructionText({ text }) {
   const isList = lines.some((l) => /^[-•]/.test(l));
   if (isList) {
     return (
-      <ul className="list-disc pl-5 space-y-1 text-sm leading-relaxed text-slate-700">
+      <ul className="list-disc pl-5 space-y-1.5 text-sm leading-relaxed text-[#24465f] marker:text-[#255e8a]">
         {lines.map((l, i) => (
           <li key={i}>{l.replace(/^[-•]\s*/, "")}</li>
         ))}
@@ -79,7 +79,7 @@ function InstructionText({ text }) {
     );
   }
   return (
-    <p className="text-sm leading-relaxed whitespace-pre-line text-slate-700">
+    <p className="text-sm leading-relaxed whitespace-pre-line text-[#24465f]">
       {text}
     </p>
   );
@@ -93,27 +93,6 @@ function App() {
   const [isFull, setIsFull] = useState(false); // false = Kurzversion
   const [selections, setSelections] = useState(initialSelections);
   const [activeInfoId, setActiveInfoId] = useState(null);
-
-  // Desktop inline instruction positioning (absolute panel)
-  const listContainerRef = React.useRef(null);
-  const itemRefs = React.useRef({});
-  const [panelTop, setPanelTop] = useState(0);
-
-  // Recompute panel top when active item changes or on resize
-  useEffect(() => {
-    const updateTop = () => {
-      if (!activeInfoId) return;
-      const el = itemRefs.current[activeInfoId];
-      const container = listContainerRef.current;
-      if (el && container) {
-        const elTop = el.offsetTop; // relative to container
-        setPanelTop(elTop);
-      }
-    };
-    updateTop();
-    window.addEventListener('resize', updateTop);
-    return () => window.removeEventListener('resize', updateTop);
-  }, [activeInfoId]);
 
   // Pop-up (Impressum & Datenschutz)
 const [showLegal, setShowLegal] = useState(false);
@@ -202,91 +181,131 @@ useEffect(() => {
   );
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="relative min-h-screen overflow-x-clip text-[#002747]">
+      <div
+        className="pointer-events-none absolute -right-24 top-[28rem] h-80 w-80 rounded-full bg-[#aec8db]/20 blur-3xl"
+        aria-hidden="true"
+      />
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-white/70 backdrop-blur border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-start gap-3 sm:gap-5">
-          <div className="min-w-0 flex-1">
-            <h1 className="text-2xl font-semibold tracking-tight">
+      <header className="relative border-b border-[#aec8db]/60 bg-gradient-to-br from-white via-[#f4f9fc] to-[#dceaf3]">
+        <div className="mx-auto max-w-6xl px-4 py-7 sm:px-6 sm:py-9">
+          <div className="flex items-start justify-between gap-6">
+            <h1 className="max-w-4xl text-2xl font-bold leading-tight tracking-[-0.025em] text-[#002747] sm:text-3xl lg:text-[2.15rem]">
               Funktionelle kognitive Störungen – Diagnostische Orientierungshilfe
             </h1>
-            <div className="mt-2 flex items-center gap-3">
-              <span className="text-sm text-slate-600">Kurzversion</span>
-              <button
-                role="switch"
-                aria-checked={isFull}
-                onClick={handleVersionToggle}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ring-1 ring-inset ${
-                  isFull ? "bg-blue-600 ring-blue-600" : "bg-slate-200 ring-slate-300"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
-                title="Kurz-/Vollversion umschalten"
-              >
-                <span
-                  className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${
-                    isFull ? "translate-x-5" : "translate-x-1"
-                  }`}
-                />
-              </button>
-              <span className="text-sm text-slate-600">Vollversion</span>
-            </div>
-            <div className="mt-2 flex items-center gap-3">
-              {/* Score pill */}
-              <span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold border border-emerald-200">
-                {totalScore} / {maxScore} Punkte
-              </span>
-            </div>
-            {/* Probability visualization */}
-            <div className="mt-2 w-full max-w-md">
-              <div className="relative h-2 w-full rounded-full bg-slate-200 overflow-hidden">
-                <div
-                  className={`absolute inset-y-0 left-0 transition-all ${totalScore >= cutoff ? "bg-emerald-600" : "bg-slate-400"}`}
-                  style={{ width: `${Math.max(0, Math.min(100, Math.round((totalScore / maxScore) * 100)))}%` }}
-                  aria-label={`Score-Balken ${totalScore} von ${maxScore}`}
-                />
-                <div className="absolute top-0 bottom-0" style={{ left: `${cutoffPct}%` }}>
-                  <div
-                    className="h-full w-0.5 bg-slate-600/60"
-                    title={`Cut-off ${cutoff}`}
-                    aria-label={`Cut-off ${cutoff}`}
-                    role="img"
-                  />
-                </div>
-              </div>
-              <p className="mt-1 text-xs text-slate-500">{probText}</p>
-            </div>
+            <img
+              src="/Logo.png"
+              alt="Verhaltensneurologie"
+              width="2953"
+              height="2362"
+              decoding="async"
+              fetchPriority="high"
+              className="hidden w-28 flex-none rounded-xl bg-white/80 p-1.5 shadow-sm ring-1 ring-[#aec8db]/50 sm:block lg:w-32"
+            />
           </div>
 
-          <img
-            src="/Logo.png"
-            alt="Verhaltensneurologie"
-            width="2953"
-            height="2362"
-            decoding="async"
-            fetchPriority="high"
-            className="w-24 sm:w-32 lg:w-40 h-auto shrink-0 rounded-xl"
-          />
+          <section
+            aria-labelledby="checklist-intro-title"
+            className="relative mt-6 max-w-4xl overflow-hidden rounded-3xl border border-[#c9dce8] bg-white/80 p-5 shadow-[0_14px_40px_-30px_rgba(0,39,71,0.55)] sm:p-6"
+          >
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-[#255e8a]" aria-hidden="true" />
+            <h2 id="checklist-intro-title" className="text-lg font-bold text-[#002747]">
+              Interaktive FKS-Checkliste zur diagnostischen Orientierung
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#45657c]">
+              Diese Orientierungshilfe unterstützt Angehörige der Gesundheitsberufe bei der
+              klinischen Einschätzung funktioneller kognitiver Störungen (FKS). Die Kurzversion
+              umfasst sieben, die Vollversion elf Hinweise. Sie ergänzt die klinische Beurteilung,
+              ersetzt aber keine ärztliche Untersuchung oder Diagnostik.
+            </p>
+          </section>
+
+          <div className="mt-6 inline-flex items-center gap-1 rounded-2xl border border-[#aec8db]/70 bg-white/75 p-1.5 shadow-sm" aria-label="Version der Checkliste">
+            <span className={`rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${!isFull ? "bg-[#e2eef5] text-[#002747]" : "text-[#597386]"}`}>
+              Kurzversion
+            </span>
+            <button
+              role="switch"
+              aria-checked={isFull}
+              onClick={handleVersionToggle}
+              className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ring-1 ring-inset ${
+                isFull ? "bg-[#255e8a] ring-[#255e8a]" : "bg-[#d4e3ed] ring-[#aec8db]"
+              } focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2`}
+              title="Kurz-/Vollversion umschalten"
+            >
+              <span
+                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${
+                  isFull ? "translate-x-6" : "translate-x-1"
+                }`}
+              />
+            </button>
+            <span className={`rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${isFull ? "bg-[#e2eef5] text-[#002747]" : "text-[#597386]"}`}>
+              Vollversion
+            </span>
+          </div>
         </div>
       </header>
 
       {/* Content */}
-      <main className="max-w-5xl mx-auto px-4 py-8 sm:py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <section
-          aria-labelledby="checklist-intro-title"
-          className="md:col-span-3 rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-sm ring-1 ring-black/5"
-        >
-          <h2 id="checklist-intro-title" className="text-lg font-semibold">
-            Interaktive FKS-Checkliste zur diagnostischen Orientierung
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-700">
-            Diese Orientierungshilfe unterstützt Angehörige der Gesundheitsberufe bei der
-            klinischen Einschätzung funktioneller kognitiver Störungen (FKS). Die Kurzversion
-            umfasst sieben, die Vollversion elf Hinweise. Sie ergänzt die klinische Beurteilung,
-            ersetzt aber keine ärztliche Untersuchung oder Diagnostik.
-          </p>
-        </section>
+      <main className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
+        <section className="grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_360px]">
+          <aside className="sticky top-3 z-20 space-y-4 self-start md:top-5 md:col-start-2 md:row-start-1">
+            <div className="rounded-3xl border border-white/80 bg-white/95 p-4 shadow-[0_18px_45px_-24px_rgba(0,39,71,0.55)] ring-1 ring-[#aec8db]/50 backdrop-blur sm:p-5">
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5f7b8e]">Aktueller Score</p>
+                  <div className="mt-1 flex items-baseline gap-2">
+                    <span className="text-4xl font-bold tracking-tight text-[#002747]">{totalScore}</span>
+                    <span className="text-sm font-medium text-[#5f7b8e]">von {maxScore} Punkten</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 w-full">
+                <div className="mb-2 flex items-center justify-between text-xs font-medium text-[#5f7b8e]">
+                  <span>Punkte</span>
+                  <span>Cut-off: {cutoff}</span>
+                </div>
+                <div className="relative h-2.5 w-full overflow-hidden rounded-full bg-[#dce8ef]">
+                  <div
+                    className={`absolute inset-y-0 left-0 rounded-full transition-all duration-300 ${totalScore >= cutoff ? "bg-[#d46a2c]" : "bg-[#255e8a]"}`}
+                    style={{ width: `${Math.max(0, Math.min(100, Math.round((totalScore / maxScore) * 100)))}%` }}
+                    aria-label={`Score-Balken ${totalScore} von ${maxScore}`}
+                  />
+                  <div className="absolute inset-y-0" style={{ left: `${cutoffPct}%` }}>
+                    <div
+                      className="h-full w-0.5 bg-[#002747]/70"
+                      title={`Cut-off ${cutoff}`}
+                      aria-label={`Cut-off ${cutoff}`}
+                      role="img"
+                    />
+                  </div>
+                </div>
+                <p className={`mt-3 rounded-2xl border px-3.5 py-3 text-xs leading-relaxed ${totalScore >= cutoff ? "border-[#efbd9c] bg-[#fff3ea] text-[#8a3e16]" : "border-[#c9dce8] bg-[#edf5fa] text-[#365b75]"}`}>
+                  {probText}
+                </p>
+              </div>
+            </div>
 
-        {/* Items */}
-        <section ref={listContainerRef} className="relative md:col-span-3 space-y-6 md:pr-[380px]">
+            {activeItem && (
+              <div className="hidden overflow-hidden rounded-3xl border border-[#b9d0df] bg-white shadow-[0_18px_45px_-30px_rgba(0,39,71,0.65)] md:block">
+                <div className="border-b border-[#d8e6ee] bg-gradient-to-r from-[#e7f1f7] to-[#f5f9fc] px-5 py-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#255e8a]">Instruktionen</p>
+                </div>
+                <div className="max-h-[calc(100vh-22rem)] overflow-y-auto p-5">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#6a8496]">
+                    Item {ITEMS.findIndex(i => i.id === activeItem.id) + 1}
+                  </p>
+                  <p className="mb-3 text-sm font-semibold leading-snug text-[#002747]">
+                    {activeItem.label}
+                  </p>
+                  <InstructionText text={activeItem.instruction} />
+                </div>
+              </div>
+            )}
+          </aside>
+
+          {/* Items */}
+          <div className="space-y-4 md:col-start-1 md:row-start-1">
           {ITEMS.map((it, idx) => {
               const val = selections[it.id];
               const isYes = val === 1;
@@ -300,28 +319,27 @@ useEffect(() => {
               return (
                 <div
                   key={it.id}
-                  ref={(el) => (itemRefs.current[it.id] = el)}
                   className={isVisible ? undefined : "hidden"}
                   aria-hidden={isVisible ? undefined : true}
                 >
                   {/* Item card (left, stable width on desktop) */}
                   <div
-                    className={`md:flex-grow md:basis-0 min-w-0 rounded-2xl border p-5 shadow-sm hover:shadow-md transition-shadow ring-1 ${
+                    className={`min-w-0 rounded-3xl border p-5 shadow-[0_10px_30px_-26px_rgba(0,39,71,0.65)] transition-all duration-200 md:flex-grow md:basis-0 sm:p-6 ${
                       isActive
-                        ? "border-blue-300 ring-blue-200 bg-white"
-                        : "border-slate-200 ring-black/5 bg-white/95"
+                        ? "border-[#6f9fbe] bg-white ring-4 ring-[#aec8db]/25"
+                        : "border-[#d5e3ec] bg-white/95 hover:-translate-y-0.5 hover:border-[#aec8db] hover:shadow-[0_18px_40px_-28px_rgba(0,39,71,0.6)]"
                     }`}
                   >
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <span className={`mt-0.5 flex-none text-sm font-bold leading-6 ${isActive ? "text-[#255e8a]" : "text-[#7892a4]"}`}>
+                        {displayIndex}.
+                      </span>
                       <div className="flex-1">
                         <div className="flex items-start gap-2">
-                          <span className="mt-1 text-sm font-semibold text-slate-400 flex-none">
-                            {displayIndex}.
-                          </span>
-                          <p className="text-base sm:text-lg font-medium leading-snug flex-1 min-w-0">
+                          <p className="min-w-0 flex-1 text-base font-semibold leading-snug text-[#0b3656] sm:text-lg">
                             {it.label}
                             {!isFull && it.onlyFull && (
-                              <span className="ml-2 text-xs font-normal text-slate-500 align-middle">
+                              <span className="ml-2 align-middle text-xs font-normal text-[#668092]">
                                 (nur Vollversion)
                               </span>
                             )}
@@ -332,36 +350,37 @@ useEffect(() => {
                       {it.instruction && (
                         <button
                           onClick={() => setActiveInfoId((cur) => (cur === it.id ? null : it.id))}
-                          className={`rounded-xl border px-3 py-1.5 text-sm transition hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                          className={`rounded-xl border px-3 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2 ${
                             isActive
-                              ? "bg-blue-50 border-blue-300 text-blue-700"
-                              : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
+                              ? "border-[#6f9fbe] bg-[#e5f0f6] text-[#174e77]"
+                              : "border-[#c9dce8] bg-white text-[#365b75] hover:border-[#8cb1ca] hover:bg-[#f4f9fc]"
                           }`}
                           aria-pressed={isActive}
                           title="Instruktion anzeigen"
                         >
-                          Instruktion
+                          <span className="sm:hidden">Info</span>
+                          <span className="hidden sm:inline">Instruktion</span>
                         </button>
                       )}
                     </div>
 
-                    <div className="mt-4 flex flex-wrap items-center gap-2">
+                    <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[#e3edf3] pt-4">
                       <button
                         onClick={() => handleSet(it.id, 0)}
-                        className={`rounded-xl px-3 py-2 text-sm font-medium border transition focus:outline-none focus:ring-2 focus:ring-slate-400 ${
+                        className={`rounded-xl border px-3.5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#52758d] focus:ring-offset-2 ${
                           isNo
-                            ? "bg-slate-900 text-white border-slate-900"
-                            : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50"
+                            ? "border-[#002747] bg-[#002747] text-white shadow-sm"
+                            : "border-[#c9dce8] bg-white text-[#36566e] hover:border-[#8eabba] hover:bg-[#f4f8fa]"
                         }`}
                       >
                         Nein/nicht getestet
                       </button>
                       <button
                         onClick={() => handleSet(it.id, 1)}
-                        className={`rounded-xl px-3 py-2 text-sm font-medium border transition focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
+                        className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2 ${
                           isYes
-                            ? "bg-emerald-600 text-white border-emerald-600"
-                            : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50"
+                            ? "border-[#255e8a] bg-[#255e8a] text-white shadow-sm"
+                            : "border-[#c9dce8] bg-white text-[#36566e] hover:border-[#8eabba] hover:bg-[#f4f8fa]"
                         }`}
                       >
                         Ja
@@ -371,12 +390,12 @@ useEffect(() => {
                     {/* Inline instruction on small screens */}
                     {it.instruction && (
                       <div
-                        className={`mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 md:hidden ${
+                        className={`mt-4 rounded-2xl border border-[#c9dce8] bg-[#f0f7fb] p-4 md:hidden ${
                           isActive ? "block" : "hidden"
                         }`}
                         aria-hidden={!isActive}
                       >
-                        <p className="text-xs uppercase tracking-wide text-slate-400 mb-1">Instruktion</p>
+                        <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#255e8a]">Instruktion</p>
                         <InstructionText text={it.instruction} />
                       </div>
                     )}
@@ -385,51 +404,22 @@ useEffect(() => {
               );
             })}
 
-          {/* Absolute desktop instruction panel aligned to active item */}
-          {activeItem && (
-            <div
-              className="hidden md:block absolute right-0 w-[360px]"
-              style={{ top: panelTop }}
-            >
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm ring-1 ring-black/5">
-                <h2 className="text-base font-semibold mb-2">Instruktionen</h2>
-                <p className="text-xs uppercase tracking-wide text-slate-400 mb-1">
-                  Item {ITEMS.findIndex(i => i.id === activeItem.id) + 1}
-                </p>
-                <p className="text-sm font-medium text-slate-900 mb-2">
-                  {activeItem.label}
-                </p>
-                <InstructionText text={activeItem.instruction} />
-              </div>
-            </div>
-          )}
-
           {/* Controls below list */}
-          <div className="flex items-center justify-between mt-2">
+          <div className="mt-4">
             <button
               onClick={handleReset}
-              className="rounded-xl px-4 py-2 text-sm font-medium border border-slate-300 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400"
+              className="rounded-xl border border-[#b9d0df] bg-white px-4 py-2.5 text-sm font-semibold text-[#365b75] transition hover:border-[#8cb1ca] hover:bg-[#f4f9fc] focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2"
             >
               Zurücksetzen
             </button>
-            <div className="text-sm text-slate-600">
-              <span className="inline-block mr-3">Legende:</span>
-              <span className="inline-flex items-center mr-3">
-                <span className="h-2 w-2 rounded-full bg-emerald-600 mr-1.5"></span>
-                Ja = 1 Punkt
-              </span>
-              <span className="inline-flex items-center">
-                <span className="h-2 w-2 rounded-full bg-slate-400 mr-1.5"></span>
-                Nein/nicht getestet = 0 Punkte
-              </span>
-            </div>
+          </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white/80 backdrop-blur">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-4 text-xs text-slate-600 sm:text-[13px]">
+      <footer className="relative border-t border-[#aec8db]/60 bg-[#e8f1f6]/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-7 text-xs text-[#4d6c81] sm:px-6 sm:text-[13px]">
           <div className="leading-relaxed">
             <p>
               Diese Checkliste basiert auf Cabreira&nbsp;et&nbsp;al., <em>BMJ Neurology Open</em> (2025).{" "}
@@ -437,7 +427,7 @@ useEffect(() => {
                 href="https://doi.org/10.1136/bmjno-2024-000918"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline decoration-slate-400 hover:decoration-slate-600"
+                className="font-medium text-[#255e8a] underline decoration-[#8cb1ca] underline-offset-2 hover:decoration-[#255e8a]"
               >
                 https://doi.org/10.1136/bmjno-2024-000918
               </a>
@@ -472,7 +462,7 @@ useEffect(() => {
               <button
                 type="button"
                 onClick={() => setShowLegal(true)}
-                className="underline decoration-slate-400 hover:decoration-slate-600"
+                className="font-medium text-[#255e8a] underline decoration-[#8cb1ca] underline-offset-2 hover:decoration-[#255e8a]"
               >
                 Impressum
               </button>
@@ -493,25 +483,25 @@ useEffect(() => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="legal-title"
-      className="relative max-w-2xl w-full rounded-2xl bg-white shadow-xl ring-1 ring-black/10"
+      className="relative max-w-2xl w-full overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-[#aec8db]"
     >
-      <div className="flex items-start justify-between px-4 py-3 border-b border-slate-200">
-        <h3 id="legal-title" className="text-base font-semibold">
+      <div className="flex items-start justify-between border-b border-[#c9dce8] bg-[#edf5fa] px-5 py-4">
+        <h3 id="legal-title" className="text-base font-bold text-[#002747]">
           Impressum 
         </h3>
         <button
           type="button"
           onClick={() => setShowLegal(false)}
-          className="rounded-md px-2 py-1 text-slate-600 hover:bg-slate-100"
+          className="rounded-lg px-2 py-1 text-[#45657c] hover:bg-[#dceaf3]"
           aria-label="Pop-up schließen"
         >
           ✕
         </button>
       </div>
 
-            <div className="px-4 py-4 space-y-4 text-sm leading-relaxed text-slate-700">
+            <div className="space-y-4 px-5 py-5 text-sm leading-relaxed text-[#365b75]">
               <section>
-                <h4 className="font-semibold text-slate-900 mb-1">Impressum</h4>
+                <h4 className="mb-1 font-semibold text-[#002747]">Impressum</h4>
                 <p>
                   Verantwortlich: Dr. J. Jungilligens<br/>
                   Klinik für Neurologie, Knappschaft Kliniken Universitätsklinikum Bochum<br/>
@@ -519,22 +509,22 @@ useEffect(() => {
                 </p>
                 <p className="mt-2">
                   Kontakt: <a href="mailto:neuropsychologie.bochum@knappschaft-kliniken.de"
-                    className="underline decoration-slate-400 hover:decoration-slate-600">
+                    className="text-[#255e8a] underline decoration-[#8cb1ca] hover:decoration-[#255e8a]">
                     neuropsychologie.bochum@knappschaft-kliniken.de
                   </a>
                 </p>
-                <p className="mt-2 text-slate-600">
+                <p className="mt-2 text-[#597386]">
                   Hinweis: Diese WebApp ist <strong>kein offizielles Projekt</strong> der Klinik, sondern wurde im Rahmen eines wissenschaftlichen Entwicklungs- und Informationsangebots erstellt.
                 </p>
               </section>
 
             </div>
 
-            <div className="px-4 py-3 border-t border-slate-200 flex justify-end">
+            <div className="flex justify-end border-t border-[#d5e3ec] bg-[#f8fbfd] px-5 py-4">
               <button
                 type="button"
                 onClick={() => setShowLegal(false)}
-                className="rounded-lg border px-3 py-1.5 text-sm bg-white hover:bg-slate-50 border-slate-300"
+                className="rounded-xl border border-[#255e8a] bg-[#255e8a] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#174e77] focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2"
               >
                 Schließen
               </button>
