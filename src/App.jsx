@@ -267,7 +267,7 @@ useEffect(() => {
                 </div>
                 <div className="relative h-2.5 w-full overflow-hidden rounded-full bg-[#dce8ef]">
                   <div
-                    className={`absolute inset-y-0 left-0 rounded-full transition-all duration-300 ${totalScore >= cutoff ? "bg-[#d46a2c]" : "bg-[#255e8a]"}`}
+                    className={`absolute inset-y-0 left-0 rounded-full transition-all duration-300 ${totalScore >= cutoff ? "bg-[#b4474b]" : "bg-[#8295a3]"}`}
                     style={{ width: `${Math.max(0, Math.min(100, Math.round((totalScore / maxScore) * 100)))}%` }}
                     aria-label={`Score-Balken ${totalScore} von ${maxScore}`}
                   />
@@ -280,7 +280,7 @@ useEffect(() => {
                     />
                   </div>
                 </div>
-                <p className={`mt-3 rounded-2xl border px-3.5 py-3 text-xs leading-relaxed ${totalScore >= cutoff ? "border-[#efbd9c] bg-[#fff3ea] text-[#8a3e16]" : "border-[#c9dce8] bg-[#edf5fa] text-[#365b75]"}`}>
+                <p className={`mt-3 rounded-2xl border px-3.5 py-3 text-xs leading-relaxed ${totalScore >= cutoff ? "border-[#e5b4b7] bg-[#fff1f2] text-[#842f35]" : "border-[#c9dce8] bg-[#edf5fa] text-[#365b75]"}`}>
                   {probText}
                 </p>
               </div>
