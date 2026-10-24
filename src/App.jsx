@@ -1,5 +1,7 @@
 // Testedit: Oboe tool successfully connected.
 import React, { useEffect, useMemo, useState } from "react";
+import { emptyChecklist } from "./checklist-storage.js";
+import { useChecklist } from "./use-checklist.js";
 
 
 // FCD Diagnostic Orientation Aid – Interactive Checklist
@@ -86,12 +88,8 @@ function InstructionText({ text }) {
 }
 
 // -1 = nicht gesetzt, 0 = Nein/nicht getestet, 1 = Ja
-const initialSelections = Object.fromEntries(ITEMS.map((i) => [i.id, -1]));
-const STORAGE_KEY = "fcd-checklist-v1";
-
 function App() {
-  const [isFull, setIsFull] = useState(false); // false = Kurzversion
-  const [selections, setSelections] = useState(initialSelections);
+  const { selections, isFull, phase, update, canReplaceInvalid } = useChecklist();
   const [activeInfoId, setActiveInfoId] = useState(null);
 
   // Pop-up (Impressum & Datenschutz)
@@ -104,31 +102,6 @@ useEffect(() => {
   window.addEventListener("keydown", onKey);
   return () => window.removeEventListener("keydown", onKey);
 }, [showLegal]);
-
-  // Load persisted state
-  /* eslint-disable react-hooks/set-state-in-effect -- restore client-only state after SSR hydration */
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const saved = JSON.parse(raw);
-        if (saved?.selections) setSelections(saved.selections);
-        if (typeof saved?.isFull === "boolean") setIsFull(saved.isFull);
-      }
-    } catch {
-      // The checklist still works when a browser blocks local storage.
-    }
-  }, []);
-  /* eslint-enable react-hooks/set-state-in-effect */
-
-  // Persist on change
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ selections, isFull }));
-    } catch {
-      // Persistence is optional; keep the in-memory checklist usable.
-    }
-  }, [selections, isFull]);
 
   const visibleItems = useMemo(
     () => ITEMS.filter((it) => (isFull ? true : !it.onlyFull)),
@@ -153,12 +126,12 @@ useEffect(() => {
     : "Unterhalb des Cut-offs: Funktionelle kognitive Störung wenig wahrscheinlich; bitte klinische Beurteilung und Verlauf beachten.";
 
   const handleSet = (id, val) => {
-    setSelections((prev) => ({ ...prev, [id]: val }));
+    update(prev => ({ ...prev, selections: { ...prev.selections, [id]: val } }));
   };
 
   const handleVersionToggle = () => {
     const nextIsFull = !isFull;
-    setIsFull(nextIsFull);
+    update(prev => ({ ...prev, isFull: nextIsFull }));
 
     if (!nextIsFull && ITEMS.find((item) => item.id === activeInfoId)?.onlyFull) {
       setActiveInfoId(null);
@@ -168,7 +141,7 @@ useEffect(() => {
   const handleReset = () => {
     const ok = window.confirm("Alle Antworten zurücksetzen?");
     if (!ok) return;
-    setSelections(initialSelections);
+    update(prev => ({ ...prev, selections: emptyChecklist().selections }));
     setActiveInfoId(null);
   };
 
@@ -179,6 +152,25 @@ useEffect(() => {
         : null,
     [activeInfoId, visibleItems]
   );
+
+  if (["blocked", "invalid", "conflict"].includes(phase)) {
+    const messages = {
+      blocked: "Die Checkliste ist bereits in einem anderen Tab geöffnet. Schließen Sie diesen Tab vor dem Fortsetzen und laden Sie diese Seite neu.",
+      conflict: "Der Speicherstand wurde außerhalb dieses Tabs geändert. Die Bearbeitung wurde angehalten. Schließen Sie andere Tabs und laden Sie diese Seite neu.",
+      invalid: "Der gespeicherte Stand ist ungültig und wurde nicht verändert. Bei verfügbarer Speicherung können Sie ihn zurücksetzen; andernfalls nur ohne Speicherung fortfahren.",
+    };
+    return (
+      <main className="mx-auto max-w-2xl p-8" aria-live="polite">
+        <h1 className="mb-4 text-xl font-bold">FKS-Checkliste</h1>
+        <p role="status">{messages[phase]}</p>
+        {phase === "invalid" && <button className="mt-4 rounded-xl border p-3" onClick={() => {
+          const question = canReplaceInvalid ? "Ungültigen Speicherstand endgültig durch eine leere Checkliste ersetzen?" : "Leere Checkliste nur für diesen Tab beginnen? Der ungültige Speicherstand bleibt erhalten.";
+          if (window.confirm(question)) update(emptyChecklist, true);
+        }}>{canReplaceInvalid ? "Ungültigen Speicherstand zurücksetzen" : "Ohne Speicherung fortfahren"}</button>}
+        {["blocked", "conflict"].includes(phase) && <button className="mt-4 rounded-xl border p-3" onClick={() => window.location.reload()}>Neu laden</button>}
+      </main>
+    );
+  }
 
   return (
     <div className="relative min-h-screen overflow-x-clip text-[#002747]">
@@ -226,6 +218,7 @@ useEffect(() => {
             </span>
             <button
               role="switch"
+              disabled={phase === "loading"}
               aria-checked={isFull}
               onClick={handleVersionToggle}
               className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ring-1 ring-inset ${
@@ -247,7 +240,10 @@ useEffect(() => {
       </header>
 
       {/* Content */}
-      <main className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
+      <main className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10" aria-busy={phase === "loading"}>
+        {phase === "memory" && <p role="alert" className="mb-5 rounded-xl border border-amber-600 bg-amber-50 p-4">
+          Die Antworten bleiben nur in diesem Tab erhalten. Automatisches Speichern ist derzeit nicht verfügbar. Beim Neuladen oder Schließen gehen Änderungen verloren.
+        </p>}
         <section className="grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_360px]">
           <aside className="sticky top-3 z-20 space-y-4 self-start md:top-5 md:col-start-2 md:row-start-1">
             <div className="rounded-3xl border border-white/80 bg-white/95 p-4 shadow-[0_18px_45px_-24px_rgba(0,39,71,0.55)] ring-1 ring-[#aec8db]/50 backdrop-blur sm:p-5">
@@ -366,6 +362,7 @@ useEffect(() => {
 
                     <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[#e3edf3] pt-4">
                       <button
+                        disabled={phase === "loading"}
                         onClick={() => handleSet(it.id, 0)}
                         className={`rounded-xl border px-3.5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#52758d] focus:ring-offset-2 ${
                           isNo
@@ -376,6 +373,7 @@ useEffect(() => {
                         Nein/nicht getestet
                       </button>
                       <button
+                        disabled={phase === "loading"}
                         onClick={() => handleSet(it.id, 1)}
                         className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2 ${
                           isYes
@@ -407,6 +405,7 @@ useEffect(() => {
           {/* Controls below list */}
           <div className="mt-4">
             <button
+              disabled={phase === "loading"}
               onClick={handleReset}
               className="rounded-xl border border-[#b9d0df] bg-white px-4 py-2.5 text-sm font-semibold text-[#365b75] transition hover:border-[#8cb1ca] hover:bg-[#f4f9fc] focus:outline-none focus:ring-2 focus:ring-[#255e8a] focus:ring-offset-2"
             >
@@ -440,10 +439,11 @@ useEffect(() => {
             </p>
 
             <p className="mt-3">
-              <strong>Datenschutz:</strong> Diese WebApp verarbeitet keinerlei personenbezogene Daten.
-              Alle Eingaben werden ausschließlich lokal im Browser gespeichert und nicht an Server
-              oder Dritte übertragen. Es erfolgt kein Tracking, keine Identifikation und keine
-              Protokollierung.
+              <strong>Datenschutz:</strong> Die App überträgt Ihre Antworten nicht an Server oder Dritte.
+              Antworten werden unverschlüsselt in diesem Browser gespeichert und bleiben bis zum
+              Zurücksetzen erhalten. Verwenden Sie ein geschütztes Browserprofil und setzen Sie die
+              Checkliste vor einer neuen Beurteilung zurück. Beim Aufruf erhält der Hostinganbieter
+              technische Verbindungsdaten; dessen Protokollierung liegt außerhalb dieser App.
             </p>
 
             <p className="mt-3">

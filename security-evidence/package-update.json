@@ -1,0 +1,1473 @@
+{
+  "reviewDate": "2026-10-24",
+  "retrievedAt": "2026-10-24T14:07:25.255937+00:00",
+  "source": "npm registry latest dist-tag (stable)",
+  "directBefore": {
+    "chart.js": "4.5.1",
+    "react": "19.2.3",
+    "react-chartjs-2": "5.3.1",
+    "react-dom": "19.2.3",
+    "@eslint/js": "9.39.1",
+    "@tailwindcss/postcss": "4.1.18",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.2",
+    "eslint": "9.39.1",
+    "eslint-plugin-react-hooks": "7.0.1",
+    "eslint-plugin-react-refresh": "0.4.24",
+    "globals": "16.5.0",
+    "tailwindcss": "4.1.18",
+    "vite": "7.3.7"
+  },
+  "directLatest": [
+    {
+      "name": "chart.js",
+      "version": "4.6.1",
+      "engines": {
+        "pnpm": ">=8"
+      },
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "dev": "karma start ./karma.conf.cjs --auto-watch --no-single-run --browsers chrome --grep",
+        "docs": "pnpm run build && cross-env NODE_OPTIONS=--openssl-legacy-provider pnpm --filter \"./docs/**\" build",
+        "lint": "concurrently \"pnpm:lint-*\"",
+        "test": "pnpm lint && pnpm test-ci",
+        "build": "rollup -c && pnpm emitDeclarations",
+        "dev:ff": "karma start ./karma.conf.cjs --auto-watch --no-single-run --browsers firefox --grep",
+        "lint-js": "eslint \"src/**/*.{js,ts}\" \"test/**/*.js\" \"docs/**/*.js\" --cache",
+        "lint-md": "eslint \"**/*.md\" --cache",
+        "test-ci": "concurrently \"pnpm:test-ci-*\"",
+        "docs:dev": "pnpm run build && cross-env NODE_OPTIONS=--openssl-legacy-provider pnpm --filter \"./docs/**\" dev",
+        "autobuild": "rollup -c -w",
+        "lint-types": "pnpm build && node test/types/autogen.js && tsc -p test/types",
+        "test-ci-karma": "cross-env NODE_ENV=test karma start ./karma.conf.cjs --auto-watch --single-run --coverage --grep",
+        "copyDeclarations": "node -e \"fs.cpSync('./src/types/', './dist/types/', {recursive:true})\"",
+        "emitDeclarations": "tsc --emitDeclarationOnly && pnpm copyDeclarations",
+        "test-ci-integration": "pnpm --filter \"./test/integration/**\" test"
+      },
+      "dependencies": {
+        "@kurkle/color": "^0.3.0"
+      },
+      "source": "https://registry.npmjs.org/chart.js/latest"
+    },
+    {
+      "name": "react",
+      "version": "19.3.1",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {},
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/react/latest"
+    },
+    {
+      "name": "react-chartjs-2",
+      "version": "5.3.1",
+      "engines": {},
+      "peers": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+        "chart.js": "^4.1.1"
+      },
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {},
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/react-chartjs-2/latest"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.1",
+      "engines": {},
+      "peers": {
+        "react": "^19.3.1"
+      },
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "start": "node server.js"
+      },
+      "dependencies": {
+        "scheduler": "^0.28.0"
+      },
+      "source": "https://registry.npmjs.org/react-dom/latest"
+    },
+    {
+      "name": "@eslint/js",
+      "version": "10.0.1",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peers": {
+        "eslint": "^10.0.0"
+      },
+      "peerMeta": {
+        "eslint": {
+          "optional": true
+        }
+      },
+      "deprecated": null,
+      "scripts": {
+        "test:types": "tsc -p tests/types/tsconfig.json"
+      },
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/%40eslint%2Fjs/latest"
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "version": "4.3.3",
+      "engines": {},
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "dev": "pnpm run build -- --watch",
+        "lint": "tsc --noEmit",
+        "build": "tsup-node"
+      },
+      "dependencies": {
+        "postcss": "^8.5.16",
+        "tailwindcss": "4.3.3",
+        "@alloc/quick-lru": "^5.2.0",
+        "@tailwindcss/node": "4.3.3",
+        "@tailwindcss/oxide": "4.3.3"
+      },
+      "source": "https://registry.npmjs.org/%40tailwindcss%2Fpostcss/latest"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "engines": {},
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {},
+      "dependencies": {
+        "csstype": "^3.2.2"
+      },
+      "source": "https://registry.npmjs.org/%40types%2Freact/latest"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "engines": {},
+      "peers": {
+        "@types/react": "^19.3.0"
+      },
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {},
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/%40types%2Freact-dom/latest"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.1.2",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peers": {
+        "vite": "^8.0.0",
+        "oxc-transform-react": "^0.152.0",
+        "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0",
+        "babel-plugin-react-compiler": "^1.0.0"
+      },
+      "peerMeta": {
+        "oxc-transform-react": {
+          "optional": true
+        },
+        "@rolldown/plugin-babel": {
+          "optional": true
+        },
+        "babel-plugin-react-compiler": {
+          "optional": true
+        }
+      },
+      "deprecated": null,
+      "scripts": {
+        "dev": "tsdown --watch ./src --watch ../common",
+        "build": "tsdown",
+        "test-unit": "vitest run",
+        "prepublishOnly": "npm run build"
+      },
+      "dependencies": {
+        "@rolldown/pluginutils": "^1.0.1"
+      },
+      "source": "https://registry.npmjs.org/%40vitejs%2Fplugin-react/latest"
+    },
+    {
+      "name": "eslint",
+      "version": "10.13.0",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peers": {
+        "jiti": "*"
+      },
+      "peerMeta": {
+        "jiti": {
+          "optional": true
+        }
+      },
+      "deprecated": null,
+      "scripts": {
+        "fmt": "prettier --write .",
+        "lint": "node Makefile.js lint",
+        "test": "node Makefile.js test",
+        "lint:fix": "node Makefile.js lint -- fix",
+        "test:cli": "mocha",
+        "fmt:check": "prettier --check .",
+        "test:fuzz": "node Makefile.js fuzz",
+        "test:pnpm": "cd tests/pnpm && node check.js && pnpm install && pnpm exec tsc",
+        "build:site": "node Makefile.js gensite",
+        "lint:types": "attw --pack",
+        "test:types": "tsc -p tests/lib/types/tsconfig.json && npm run test:types --workspaces --if-present",
+        "lint:unused": "knip",
+        "test:emfile": "node tools/check-emfile-handling.js",
+        "build:readme": "node tools/update-readme.js",
+        "lint:docs:js": "node Makefile.js lintDocsJS",
+        "test:browser": "node Makefile.js cypress",
+        "build:webpack": "node Makefile.js webpack",
+        "test:ecosystem": "node tools/test-ecosystem/index.mjs",
+        "test:types:5.3": "npx -p typescript@5.3 -y -- tsc -p tsconfig.types-legacy.json",
+        "test:types:5.x": "npx -p typescript@5.x -y -- tsc -p tsconfig.types.json",
+        "test:types:7.x": "npx -p @typescript/native-preview@latest -y -- tsgo -p tsconfig.types.json",
+        "test:types:all": "npm run test:types && npm run test:types:5.3 && npm run test:types:5.x && npm run test:types:7.x",
+        "lint:rule-types": "node tools/update-rule-type-headers.js --check",
+        "release:publish": "node Makefile.js publishRelease",
+        "lint:fix:docs:js": "node Makefile.js lintDocsJS -- fix",
+        "test:performance": "node Makefile.js perf",
+        "build:rules-index": "node Makefile.js generateRuleIndexPage",
+        "release:generate:rc": "node Makefile.js generatePrerelease -- rc",
+        "release:generate:beta": "node Makefile.js generatePrerelease -- beta",
+        "test:ecosystem:update": "node tools/test-ecosystem/update.mjs",
+        "release:generate:alpha": "node Makefile.js generatePrerelease -- alpha",
+        "build:docs:update-links": "node tools/fetch-docs-links.js",
+        "lint:docs:rule-examples": "node Makefile.js checkRuleExamples",
+        "release:generate:latest": "node Makefile.js generateRelease -- latest",
+        "release:generate:maintenance": "node Makefile.js generateRelease -- maintenance"
+      },
+      "dependencies": {
+        "ajv": "^6.14.0",
+        "debug": "^4.3.2",
+        "espree": "^11.2.0",
+        "ignore": "^5.2.0",
+        "esquery": "^1.7.0",
+        "esutils": "^2.0.2",
+        "find-up": "^5.0.0",
+        "is-glob": "^4.0.0",
+        "minimatch": "^10.2.5",
+        "optionator": "^0.9.3",
+        "cross-spawn": "^7.0.6",
+        "glob-parent": "^6.0.2",
+        "imurmurhash": "^0.1.4",
+        "@eslint/core": "^1.2.1",
+        "eslint-scope": "^9.1.2",
+        "@humanfs/node": "^0.16.6",
+        "@types/estree": "^1.0.6",
+        "fast-deep-equal": "^3.1.3",
+        "natural-compare": "^1.4.0",
+        "file-entry-cache": "11.1.5 || >11.1.6 <12",
+        "@eslint/plugin-kit": "^0.7.3",
+        "eslint-visitor-keys": "^5.0.1",
+        "@eslint/config-array": "^0.23.5",
+        "@humanwhocodes/retry": "^0.4.2",
+        "escape-string-regexp": "^4.0.0",
+        "@eslint/config-helpers": "^0.7.0",
+        "@eslint-community/regexpp": "^4.12.2",
+        "@eslint-community/eslint-utils": "^4.8.0",
+        "@humanwhocodes/module-importer": "^1.0.1",
+        "json-stable-stringify-without-jsonify": "^1.0.1"
+      },
+      "source": "https://registry.npmjs.org/eslint/latest"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "7.1.1",
+      "engines": {
+        "node": ">=18"
+      },
+      "peers": {
+        "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0"
+      },
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "test": "yarn build:compiler && jest",
+        "typecheck": "tsc --noEmit",
+        "build:compiler": "cd ../../compiler && yarn workspace babel-plugin-react-compiler build"
+      },
+      "dependencies": {
+        "zod": "^3.25.0 || ^4.0.0",
+        "@babel/core": "^7.24.4",
+        "@babel/parser": "^7.24.4",
+        "hermes-parser": "^0.25.1",
+        "zod-validation-error": "^3.5.0 || ^4.0.0"
+      },
+      "source": "https://registry.npmjs.org/eslint-plugin-react-hooks/latest"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "version": "0.5.7",
+      "engines": {},
+      "peers": {
+        "eslint": "^9 || ^10"
+      },
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {},
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/eslint-plugin-react-refresh/latest"
+    },
+    {
+      "name": "globals",
+      "version": "17.13.0",
+      "engines": {
+        "node": ">=18"
+      },
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "test": "npm run build && xo && ava && tsd",
+        "build": "run-s build:data build:types",
+        "update": "node scripts/update.mjs",
+        "prepare": "npm run build",
+        "build:data": "node scripts/generate-data.mjs",
+        "build:types": "node scripts/generate-types.mjs",
+        "update:jest": "node scripts/update.mjs --job=jest",
+        "update:vitest": "node scripts/update.mjs --job=vitest",
+        "update:worker": "node scripts/update.mjs --job=worker",
+        "update:browser": "node scripts/update.mjs --job=browser",
+        "update:builtin": "node scripts/update.mjs --job=builtin",
+        "update:shelljs": "node scripts/update.mjs --job=shelljs",
+        "update:bunBuiltin": "node scripts/update.mjs --job=bunBuiltin",
+        "update:denoBuiltin": "node scripts/update.mjs --job=denoBuiltin",
+        "update:nodeBuiltin": "node scripts/update.mjs --job=nodeBuiltin",
+        "update:audioWorklet": "node scripts/update.mjs --job=audioWorklet",
+        "update:sharedWorker": "node scripts/update.mjs --job=sharedWorker",
+        "update:serviceworker": "node scripts/update.mjs --job=serviceworker",
+        "update:builtin-yearly": "node scripts/update.mjs --job=builtin-yearly"
+      },
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/globals/latest"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.3.3",
+      "engines": {},
+      "peers": {},
+      "peerMeta": {},
+      "deprecated": null,
+      "scripts": {
+        "dev": "tsup-node --env.NODE_ENV development --watch",
+        "lint": "tsc --noEmit",
+        "build": "tsup-node --env.NODE_ENV production",
+        "test:ui": "playwright test"
+      },
+      "dependencies": {},
+      "source": "https://registry.npmjs.org/tailwindcss/latest"
+    },
+    {
+      "name": "vite",
+      "version": "8.3.5",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peers": {
+        "tsx": "^4.8.1",
+        "jiti": ">=1.21.0",
+        "less": "^4.0.0",
+        "sass": "^1.70.0",
+        "yaml": "^2.4.2",
+        "stylus": ">=0.54.8",
+        "terser": "^5.16.0",
+        "esbuild": "^0.27.0 || ^0.28.0",
+        "sugarss": "^5.0.0",
+        "@types/node": "^20.19.0 || >=22.12.0",
+        "sass-embedded": "^1.70.0",
+        "@vitejs/devtools": "^0.7.1 || ^0.8.0"
+      },
+      "peerMeta": {
+        "tsx": {
+          "optional": true
+        },
+        "jiti": {
+          "optional": true
+        },
+        "less": {
+          "optional": true
+        },
+        "sass": {
+          "optional": true
+        },
+        "yaml": {
+          "optional": true
+        },
+        "stylus": {
+          "optional": true
+        },
+        "terser": {
+          "optional": true
+        },
+        "esbuild": {
+          "optional": true
+        },
+        "sugarss": {
+          "optional": true
+        },
+        "@types/node": {
+          "optional": true
+        },
+        "sass-embedded": {
+          "optional": true
+        },
+        "@vitejs/devtools": {
+          "optional": true
+        }
+      },
+      "deprecated": null,
+      "scripts": {
+        "dev": "premove dist && pnpm build-bundle -w",
+        "lint": "oxlint src",
+        "build": "premove dist && pnpm build-bundle && pnpm build-types",
+        "format": "oxfmt",
+        "typecheck": "tsc && tsc -p src/node && tsc -p src/client && tsc -p src/module-runner && tsc -p src/shared && tsc -p src/node/__tests_dts__ && tsc -p src/module-runner/__tests_dts__",
+        "build-types": "pnpm build-types-roll && pnpm build-types-check",
+        "build-bundle": "rolldown --config rolldown.config.ts",
+        "generate-target": "tsx scripts/generateTarget.ts",
+        "build-types-roll": "rolldown --config rolldown.dts.config.ts",
+        "build-types-check": "tsc --project tsconfig.check.json"
+      },
+      "dependencies": {
+        "postcss": "^8.5.30",
+        "rolldown": "~1.2.14",
+        "picomatch": "^4.0.7",
+        "tinyglobby": "^0.2.17",
+        "lightningcss": "^1.33.0"
+      },
+      "source": "https://registry.npmjs.org/vite/latest"
+    }
+  ],
+  "osvAfter": {
+    "packagesChecked": 205,
+    "matches": [],
+    "retrievedAt": "2026-10-24T14:11:49.296860+00:00"
+  },
+  "npmAuditAfter": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "npmProductionAfter": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "outdatedAllAfter": {
+    "@babel/code-frame": [
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/code-frame"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/template",
+        "location": "node_modules/@babel/code-frame"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/traverse",
+        "location": "node_modules/@babel/code-frame"
+      }
+    ],
+    "@babel/compat-data": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.5",
+      "dependent": "@babel/helper-compilation-targets",
+      "location": "node_modules/@babel/compat-data"
+    },
+    "@babel/core": [
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.9",
+        "dependent": "@babel/helper-module-transforms",
+        "location": "node_modules/@babel/core"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.9",
+        "dependent": "eslint-plugin-react-hooks",
+        "location": "node_modules/@babel/core"
+      }
+    ],
+    "@babel/generator": [
+      {
+        "current": "7.29.8",
+        "wanted": "7.29.8",
+        "latest": "8.0.6",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/generator"
+      },
+      {
+        "current": "7.29.8",
+        "wanted": "7.29.8",
+        "latest": "8.0.6",
+        "dependent": "@babel/traverse",
+        "location": "node_modules/@babel/generator"
+      }
+    ],
+    "@babel/helper-compilation-targets": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.7",
+      "dependent": "@babel/core",
+      "location": "node_modules/@babel/helper-compilation-targets"
+    },
+    "@babel/helper-globals": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.6",
+      "dependent": "@babel/traverse",
+      "location": "node_modules/@babel/helper-globals"
+    },
+    "@babel/helper-module-imports": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.0",
+      "dependent": "@babel/helper-module-transforms",
+      "location": "node_modules/@babel/helper-module-imports"
+    },
+    "@babel/helper-module-transforms": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.6",
+      "dependent": "@babel/core",
+      "location": "node_modules/@babel/helper-module-transforms"
+    },
+    "@babel/helper-string-parser": {
+      "current": "7.29.11",
+      "wanted": "7.29.11",
+      "latest": "8.0.8",
+      "dependent": "@babel/types",
+      "location": "node_modules/@babel/helper-string-parser"
+    },
+    "@babel/helper-validator-identifier": [
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/code-frame",
+        "location": "node_modules/@babel/helper-validator-identifier"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/helper-module-transforms",
+        "location": "node_modules/@babel/helper-validator-identifier"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.6",
+        "dependent": "@babel/types",
+        "location": "node_modules/@babel/helper-validator-identifier"
+      }
+    ],
+    "@babel/helper-validator-option": {
+      "current": "7.29.7",
+      "wanted": "7.29.7",
+      "latest": "8.0.0",
+      "dependent": "@babel/helper-compilation-targets",
+      "location": "node_modules/@babel/helper-validator-option"
+    },
+    "@babel/helpers": {
+      "current": "7.29.10",
+      "wanted": "7.29.10",
+      "latest": "8.0.8",
+      "dependent": "@babel/core",
+      "location": "node_modules/@babel/helpers"
+    },
+    "@babel/parser": [
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/parser"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/generator",
+        "location": "node_modules/@babel/parser"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/template",
+        "location": "node_modules/@babel/parser"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/traverse",
+        "location": "node_modules/@babel/parser"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "eslint-plugin-react-hooks",
+        "location": "node_modules/@babel/parser"
+      }
+    ],
+    "@babel/template": [
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.0",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/template"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.0",
+        "dependent": "@babel/helpers",
+        "location": "node_modules/@babel/template"
+      },
+      {
+        "current": "7.29.7",
+        "wanted": "7.29.7",
+        "latest": "8.0.0",
+        "dependent": "@babel/traverse",
+        "location": "node_modules/@babel/template"
+      }
+    ],
+    "@babel/traverse": [
+      {
+        "current": "7.29.10",
+        "wanted": "7.29.10",
+        "latest": "8.0.7",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/traverse"
+      },
+      {
+        "current": "7.29.10",
+        "wanted": "7.29.10",
+        "latest": "8.0.7",
+        "dependent": "@babel/helper-module-imports",
+        "location": "node_modules/@babel/traverse"
+      },
+      {
+        "current": "7.29.10",
+        "wanted": "7.29.10",
+        "latest": "8.0.7",
+        "dependent": "@babel/helper-module-transforms",
+        "location": "node_modules/@babel/traverse"
+      }
+    ],
+    "@babel/types": [
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/core",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/generator",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/helper-module-imports",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/helpers",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/parser",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/template",
+        "location": "node_modules/@babel/types"
+      },
+      {
+        "current": "7.29.11",
+        "wanted": "7.29.11",
+        "latest": "8.0.8",
+        "dependent": "@babel/traverse",
+        "location": "node_modules/@babel/types"
+      }
+    ],
+    "@keyv/bigmap": {
+      "current": "1.3.1",
+      "wanted": "1.3.1",
+      "latest": "6.1.0",
+      "dependent": "@cacheable/memory",
+      "location": "node_modules/@keyv/bigmap"
+    },
+    "@kurkle/color": {
+      "current": "0.3.4",
+      "wanted": "0.3.4",
+      "latest": "0.6.5",
+      "dependent": "chart.js",
+      "location": "node_modules/@kurkle/color"
+    },
+    "@rolldown/binding-android-arm-eabi": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-android-arm64": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-darwin-x64": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-freebsd-x64": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-arm-gnueabihf": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-arm64-gnu": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-arm64-musl": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-ppc64-gnu": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-s390x-gnu": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-x64-gnu": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-linux-x64-musl": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-openharmony-arm64": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-win32-arm64-msvc": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/binding-win32-x64-msvc": {
+      "wanted": "1.2.15",
+      "latest": "1.2.15",
+      "dependent": "rolldown"
+    },
+    "@rolldown/plugin-babel": {
+      "wanted": "0.2.4",
+      "latest": "0.2.4",
+      "dependent": "@vitejs/plugin-react"
+    },
+    "@tailwindcss/oxide-android-arm64": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-darwin-x64": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-freebsd-x64": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-linux-arm-gnueabihf": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-linux-arm64-gnu": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-linux-arm64-musl": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-linux-x64-gnu": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-linux-x64-musl": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-wasm32-wasi": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-win32-arm64-msvc": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@tailwindcss/oxide-win32-x64-msvc": {
+      "wanted": "4.3.3",
+      "latest": "4.3.3",
+      "dependent": "@tailwindcss/oxide"
+    },
+    "@types/node": {
+      "wanted": "26.6.5",
+      "latest": "26.6.5",
+      "dependent": "vite"
+    },
+    "@vitejs/devtools": {
+      "wanted": "0.8.0",
+      "latest": "0.8.0",
+      "dependent": "vite"
+    },
+    "ajv": {
+      "current": "6.15.0",
+      "wanted": "6.15.0",
+      "latest": "8.20.0",
+      "dependent": "eslint",
+      "location": "node_modules/ajv"
+    },
+    "babel-plugin-react-compiler": {
+      "wanted": "1.0.0",
+      "latest": "1.0.0",
+      "dependent": "@vitejs/plugin-react"
+    },
+    "balanced-match": {
+      "current": "4.0.4",
+      "wanted": "4.0.4",
+      "latest": "5.0.0",
+      "dependent": "brace-expansion",
+      "location": "node_modules/balanced-match"
+    },
+    "esbuild": {
+      "wanted": "0.28.2",
+      "latest": "0.28.2",
+      "dependent": "vite"
+    },
+    "escape-string-regexp": {
+      "current": "4.0.0",
+      "wanted": "4.0.0",
+      "latest": "5.0.0",
+      "dependent": "eslint",
+      "location": "node_modules/escape-string-regexp"
+    },
+    "eslint-visitor-keys": {
+      "current": "3.4.3",
+      "wanted": "3.4.3",
+      "latest": "5.0.1",
+      "dependent": "@eslint-community/eslint-utils",
+      "location": "node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys"
+    },
+    "fast-levenshtein": {
+      "current": "2.0.6",
+      "wanted": "2.0.6",
+      "latest": "3.0.0",
+      "dependent": "optionator",
+      "location": "node_modules/fast-levenshtein"
+    },
+    "find-up": {
+      "current": "5.0.0",
+      "wanted": "5.0.0",
+      "latest": "8.0.0",
+      "dependent": "eslint",
+      "location": "node_modules/find-up"
+    },
+    "hashery": [
+      {
+        "current": "1.5.1",
+        "wanted": "1.5.1",
+        "latest": "3.0.5",
+        "dependent": "@cacheable/utils",
+        "location": "node_modules/hashery"
+      },
+      {
+        "current": "1.5.1",
+        "wanted": "1.5.1",
+        "latest": "3.0.5",
+        "dependent": "@keyv/bigmap",
+        "location": "node_modules/hashery"
+      }
+    ],
+    "hermes-estree": {
+      "current": "0.25.1",
+      "wanted": "0.25.1",
+      "latest": "0.37.0",
+      "dependent": "hermes-parser",
+      "location": "node_modules/hermes-estree"
+    },
+    "hermes-parser": {
+      "current": "0.25.1",
+      "wanted": "0.25.1",
+      "latest": "0.37.0",
+      "dependent": "eslint-plugin-react-hooks",
+      "location": "node_modules/hermes-parser"
+    },
+    "hookified": [
+      {
+        "current": "1.15.1",
+        "wanted": "1.15.1",
+        "latest": "3.1.0",
+        "dependent": "@cacheable/memory",
+        "location": "node_modules/hookified"
+      },
+      {
+        "current": "1.15.1",
+        "wanted": "1.15.1",
+        "latest": "3.1.0",
+        "dependent": "@keyv/bigmap",
+        "location": "node_modules/hookified"
+      },
+      {
+        "current": "1.15.1",
+        "wanted": "1.15.1",
+        "latest": "3.1.0",
+        "dependent": "cacheable",
+        "location": "node_modules/hookified"
+      },
+      {
+        "current": "1.15.1",
+        "wanted": "1.15.1",
+        "latest": "3.1.0",
+        "dependent": "flat-cache",
+        "location": "node_modules/hookified"
+      },
+      {
+        "current": "1.15.1",
+        "wanted": "1.15.1",
+        "latest": "3.1.0",
+        "dependent": "hashery",
+        "location": "node_modules/hookified"
+      },
+      {
+        "current": "2.2.0",
+        "wanted": "2.2.0",
+        "latest": "3.1.0",
+        "dependent": "qified",
+        "location": "node_modules/qified/node_modules/hookified"
+      }
+    ],
+    "ignore": {
+      "current": "5.3.2",
+      "wanted": "5.3.2",
+      "latest": "7.0.14",
+      "dependent": "eslint",
+      "location": "node_modules/ignore"
+    },
+    "isexe": {
+      "current": "2.0.0",
+      "wanted": "2.0.0",
+      "latest": "4.0.0",
+      "dependent": "which",
+      "location": "node_modules/isexe"
+    },
+    "js-tokens": {
+      "current": "4.0.0",
+      "wanted": "4.0.0",
+      "latest": "10.0.0",
+      "dependent": "@babel/code-frame",
+      "location": "node_modules/js-tokens"
+    },
+    "json-schema-traverse": {
+      "current": "0.4.1",
+      "wanted": "0.4.1",
+      "latest": "1.0.0",
+      "dependent": "ajv",
+      "location": "node_modules/json-schema-traverse"
+    },
+    "keyv": [
+      {
+        "current": "5.6.0",
+        "wanted": "5.6.0",
+        "latest": "6.1.0",
+        "dependent": "@cacheable/memory",
+        "location": "node_modules/keyv"
+      },
+      {
+        "current": "5.6.0",
+        "wanted": "5.6.0",
+        "latest": "6.1.0",
+        "dependent": "@cacheable/utils",
+        "location": "node_modules/keyv"
+      },
+      {
+        "current": "5.6.0",
+        "wanted": "5.6.0",
+        "latest": "6.1.0",
+        "dependent": "@keyv/bigmap",
+        "location": "node_modules/keyv"
+      },
+      {
+        "current": "5.6.0",
+        "wanted": "5.6.0",
+        "latest": "6.1.0",
+        "dependent": "cacheable",
+        "location": "node_modules/keyv"
+      }
+    ],
+    "less": {
+      "wanted": "4.9.1",
+      "latest": "4.9.1",
+      "dependent": "vite"
+    },
+    "lightningcss": {
+      "current": "1.32.0",
+      "wanted": "1.32.0",
+      "latest": "1.33.0",
+      "dependent": "@tailwindcss/node",
+      "location": "node_modules/lightningcss"
+    },
+    "lightningcss-android-arm64": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-darwin-arm64": {
+      "current": "1.32.0",
+      "wanted": "1.32.0",
+      "latest": "1.33.0",
+      "dependent": "lightningcss",
+      "location": "node_modules/lightningcss-darwin-arm64"
+    },
+    "lightningcss-darwin-x64": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-freebsd-x64": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-linux-arm-gnueabihf": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-linux-arm64-gnu": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-linux-arm64-musl": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-linux-x64-gnu": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-linux-x64-musl": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-win32-arm64-msvc": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "lightningcss-win32-x64-msvc": [
+      {
+        "wanted": "1.32.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      },
+      {
+        "wanted": "1.33.0",
+        "latest": "1.33.0",
+        "dependent": "lightningcss"
+      }
+    ],
+    "locate-path": {
+      "current": "6.0.0",
+      "wanted": "6.0.0",
+      "latest": "8.0.0",
+      "dependent": "find-up",
+      "location": "node_modules/locate-path"
+    },
+    "lru-cache": {
+      "current": "5.1.1",
+      "wanted": "5.1.1",
+      "latest": "11.5.3",
+      "dependent": "@babel/helper-compilation-targets",
+      "location": "node_modules/lru-cache"
+    },
+    "magic-string": {
+      "current": "0.30.21",
+      "wanted": "0.30.21",
+      "latest": "1.4.3",
+      "dependent": "@tailwindcss/node",
+      "location": "node_modules/magic-string"
+    },
+    "nanoid": {
+      "current": "3.3.20",
+      "wanted": "3.3.20",
+      "latest": "6.0.2",
+      "dependent": "postcss",
+      "location": "node_modules/nanoid"
+    },
+    "oxc-transform-react": {
+      "wanted": "0.152.0",
+      "latest": "0.155.0",
+      "dependent": "@vitejs/plugin-react"
+    },
+    "p-limit": {
+      "current": "3.1.0",
+      "wanted": "3.1.0",
+      "latest": "7.3.3",
+      "dependent": "p-locate",
+      "location": "node_modules/p-limit"
+    },
+    "p-locate": {
+      "current": "5.0.0",
+      "wanted": "5.0.0",
+      "latest": "7.0.0",
+      "dependent": "locate-path",
+      "location": "node_modules/p-locate"
+    },
+    "path-exists": {
+      "current": "4.0.0",
+      "wanted": "4.0.0",
+      "latest": "5.0.0",
+      "dependent": "find-up",
+      "location": "node_modules/path-exists"
+    },
+    "path-key": {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "4.0.0",
+      "dependent": "cross-spawn",
+      "location": "node_modules/path-key"
+    },
+    "qified": {
+      "current": "0.10.1",
+      "wanted": "0.10.1",
+      "latest": "0.13.2",
+      "dependent": "cacheable",
+      "location": "node_modules/qified"
+    },
+    "sass": {
+      "wanted": "1.106.1",
+      "latest": "1.106.1",
+      "dependent": "vite"
+    },
+    "sass-embedded": {
+      "wanted": "1.106.1",
+      "latest": "1.106.1",
+      "dependent": "vite"
+    },
+    "semver": [
+      {
+        "current": "6.3.1",
+        "wanted": "6.3.1",
+        "latest": "7.8.5",
+        "dependent": "@babel/core",
+        "location": "node_modules/semver"
+      },
+      {
+        "current": "6.3.1",
+        "wanted": "6.3.1",
+        "latest": "7.8.5",
+        "dependent": "@babel/helper-compilation-targets",
+        "location": "node_modules/semver"
+      }
+    ],
+    "shebang-regex": {
+      "current": "3.0.0",
+      "wanted": "3.0.0",
+      "latest": "4.0.0",
+      "dependent": "shebang-command",
+      "location": "node_modules/shebang-regex"
+    },
+    "stylus": {
+      "wanted": "0.64.0",
+      "latest": "0.64.0",
+      "dependent": "vite"
+    },
+    "sugarss": {
+      "wanted": "5.0.2",
+      "latest": "5.0.2",
+      "dependent": "vite"
+    },
+    "terser": {
+      "wanted": "5.51.2",
+      "latest": "5.51.2",
+      "dependent": "vite"
+    },
+    "tsx": {
+      "wanted": "4.23.15",
+      "latest": "4.23.15",
+      "dependent": "vite"
+    },
+    "which": {
+      "current": "2.0.2",
+      "wanted": "2.0.2",
+      "latest": "7.0.0",
+      "dependent": "cross-spawn",
+      "location": "node_modules/which"
+    },
+    "yallist": {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.0.0",
+      "dependent": "lru-cache",
+      "location": "node_modules/yallist"
+    },
+    "yaml": {
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "vite"
+    },
+    "yocto-queue": {
+      "current": "0.1.0",
+      "wanted": "0.1.0",
+      "latest": "1.2.2",
+      "dependent": "p-limit",
+      "location": "node_modules/yocto-queue"
+    },
+    "zod-validation-error": {
+      "current": "4.0.2",
+      "wanted": "4.0.2",
+      "latest": "5.0.0",
+      "dependent": "eslint-plugin-react-hooks",
+      "location": "node_modules/zod-validation-error"
+    }
+  },
+  "directAfter": {
+    "chart.js": "4.6.1",
+    "react": "19.3.1",
+    "react-chartjs-2": "5.3.1",
+    "react-dom": "19.3.1",
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "eslint": "10.13.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "globals": "17.13.0",
+    "tailwindcss": "4.3.3",
+    "vite": "8.3.5"
+  },
+  "lockSha256": "f20347fc7bf7d6173e7b5f7973e3b7485036ae71387e63733edfa103c7061bd8",
+  "checks": {
+    "node": "22.23.4",
+    "npm": "10.9.9",
+    "lint": "passed",
+    "build": "passed",
+    "unitAndArtifactTests": 5,
+    "browserScenarios": 11,
+    "npmLsAll": "passed",
+    "typecheck": "not configured",
+    "developmentStrictModeBrowser": "passed",
+    "cleanup": "All created browser contexts disposed, own Chrome closed over its verified CDP connection, own Vite server stopped.",
+    "buildArtifacts": [
+      {
+        "path": "dist/Logo.png",
+        "sha256": "d95695aaaad48e43335d8ad165beca4f79c2a5b0bcb36703c71a189907571db4"
+      },
+      {
+        "path": "dist/assets/Logo-B_eaABXC.png",
+        "sha256": "d95695aaaad48e43335d8ad165beca4f79c2a5b0bcb36703c71a189907571db4"
+      },
+      {
+        "path": "dist/assets/index-BHyoujTn.css",
+        "sha256": "f1f63bc272a9d12daed72aa67c581149be17e3eb76dff27569f12696780fa12d"
+      },
+      {
+        "path": "dist/assets/index-BY6Rorvh.js",
+        "sha256": "0282b84849307efc40cc81462b93238dcae2eb6d956509112502d025bdd8b853"
+      },
+      {
+        "path": "dist/index.html",
+        "sha256": "14c20ac479a9fd481c3630631695380746771e02b2dc28acc55467e410204fb1"
+      },
+      {
+        "path": "dist/robots.txt",
+        "sha256": "5016d758b8a292981e1299b1eee568721c40bf3c43293916629676df8f41a7e8"
+      },
+      {
+        "path": "dist/site.webmanifest",
+        "sha256": "766dbb04261f2ceface3655dd633d5f97789c48418b9e5187cea7cfe8ee1aa1c"
+      },
+      {
+        "path": "dist/sitemap.xml",
+        "sha256": "9ad535cc33ca91fcafdefe80a5b4782047765f627fe5ec3be85622cdedc1ee37"
+      },
+      {
+        "path": "dist/vite.svg",
+        "sha256": "4a748afd443918bb16591c834c401dae33e87861ab5dbad0811c3a3b4a9214fb"
+      }
+    ],
+    "strictModeFix": "Sequence pending lock requests across effect cleanup/replay; regression in tests/dev.browser.mjs."
+  },
+  "constraintSummary": {
+    "installedDependencyNamesBelowLatest": 50,
+    "installableUpdatesWithinParentConstraints": [],
+    "examples": [
+      {
+        "parent": "eslint-plugin-react-hooks",
+        "dependency": "@babel/core",
+        "range": "^7.24.4"
+      },
+      {
+        "parent": "@tailwindcss/node",
+        "dependency": "lightningcss",
+        "range": "1.32.0"
+      },
+      {
+        "parent": "postcss",
+        "dependency": "nanoid",
+        "range": "^3.3.20"
+      },
+      {
+        "parent": "chart.js",
+        "dependency": "@kurkle/color",
+        "range": "^0.3.0"
+      }
+    ]
+  }
+}

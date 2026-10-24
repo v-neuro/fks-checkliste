@@ -7,25 +7,35 @@
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:runtime": "node scripts/check-runtime.mjs",
+    "predev": "npm run check:runtime",
+    "prebuild": "npm run check:runtime",
+    "prepreview": "npm run check:runtime",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/security.browser.mjs",
+    "test:dev-browser": "node tests/dev.browser.mjs"
   },
   "dependencies": {
-    "chart.js": "^4.5.1",
-    "react": "^19.2.3",
+    "chart.js": "^4.6.1",
+    "react": "^19.3.1",
     "react-chartjs-2": "^5.3.1",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@tailwindcss/postcss": "^4.1.18",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
-    "tailwindcss": "^4.1.18",
-    "vite": "^7.2.7"
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
+  },
+  "engines": {
+    "node": ">=22.23.4 <23"
   }
 }

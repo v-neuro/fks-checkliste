@@ -1,0 +1,3531 @@
+{
+  "reviewDate": "2026-10-24",
+  "retrievedAt": "2026-10-24T13:41:32.343799+00:00",
+  "npmAuditBefore": {
+    "info": 0,
+    "low": 1,
+    "moderate": 3,
+    "high": 12,
+    "critical": 0,
+    "total": 16
+  },
+  "npmProductionBefore": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "advisories": [
+    {
+      "package": "@babel/core",
+      "installed": [
+        "7.28.5"
+      ],
+      "updated": [
+        "7.29.7"
+      ],
+      "id": "GHSA-4x5r-pxfx-6jf8",
+      "severity": "low",
+      "affectedRange": "<=7.29.0",
+      "source": "https://github.com/advisories/GHSA-4x5r-pxfx-6jf8",
+      "aliases": [
+        "CVE-2026-49356"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49356"
+      ],
+      "github": {
+        "cve": "CVE-2026-49356",
+        "updated": "2026-07-15T22:05:27Z",
+        "fixes": [
+          {
+            "name": "@babel/core",
+            "range": ">= 8.0.0-alpha.0, < 8.0.0-rc.5",
+            "fixed": "8.0.0-rc.6"
+          },
+          {
+            "name": "@babel/core",
+            "range": "<= 7.29.0",
+            "fixed": "7.29.6"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "@babel/core",
+          "fixed": [
+            "8.0.0-rc.6"
+          ]
+        },
+        {
+          "package": "@babel/core",
+          "fixed": [
+            "7.29.6"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@humanfs/node",
+      "installed": [
+        "0.16.7"
+      ],
+      "updated": [
+        "0.16.8"
+      ],
+      "id": "GHSA-p498-v437-472g",
+      "severity": "moderate",
+      "affectedRange": "<0.16.8",
+      "source": "https://github.com/advisories/GHSA-p498-v437-472g",
+      "aliases": [],
+      "upstreamSources": [],
+      "github": {
+        "cve": null,
+        "updated": "2026-09-02T14:27:17Z",
+        "fixes": [
+          {
+            "name": "@humanfs/node",
+            "range": "< 0.16.8",
+            "fixed": "0.16.8"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "@humanfs/node",
+          "fixed": [
+            "0.16.8"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "ajv",
+      "installed": [
+        "6.12.6"
+      ],
+      "updated": [
+        "6.15.0"
+      ],
+      "id": "GHSA-2g4f-4pwh-qvx6",
+      "severity": "moderate",
+      "affectedRange": "<6.14.0",
+      "source": "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6",
+      "aliases": [
+        "CVE-2025-69873"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-69873",
+        "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6"
+      ],
+      "github": {
+        "cve": "CVE-2025-69873",
+        "updated": "2026-03-02T21:58:41Z",
+        "fixes": [
+          {
+            "name": "ajv",
+            "range": ">= 7.0.0-alpha.0, < 8.18.0",
+            "fixed": "8.18.0"
+          },
+          {
+            "name": "ajv",
+            "range": "< 6.14.0",
+            "fixed": "6.14.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "ajv",
+          "fixed": [
+            "8.18.0"
+          ]
+        },
+        {
+          "package": "ajv",
+          "fixed": [
+            "6.14.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "baseline-browser-mapping",
+      "installed": [
+        "2.8.4"
+      ],
+      "updated": [
+        "2.11.32"
+      ],
+      "id": "GHSA-w5vr-8v7q-w6rv",
+      "severity": "moderate",
+      "affectedRange": ">=2.0.0 <2.11.0",
+      "source": "https://github.com/advisories/GHSA-w5vr-8v7q-w6rv",
+      "aliases": [
+        "CVE-2026-45819"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45819"
+      ],
+      "github": {
+        "cve": "CVE-2026-45819",
+        "updated": "2026-09-08T20:41:23Z",
+        "fixes": [
+          {
+            "name": "baseline-browser-mapping",
+            "range": ">= 2.0.0, < 2.11.0",
+            "fixed": "2.11.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "baseline-browser-mapping",
+          "fixed": [
+            "2.11.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-f886-m6hf-6m8v",
+      "severity": "moderate",
+      "affectedRange": "<1.1.13",
+      "source": "https://github.com/advisories/GHSA-f886-m6hf-6m8v",
+      "aliases": [
+        "CVE-2026-33750"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-33750"
+      ],
+      "github": {
+        "cve": "CVE-2026-33750",
+        "updated": "2026-03-27T21:38:55Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.5",
+            "fixed": "5.0.5"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.2",
+            "fixed": "3.0.2"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.0.3",
+            "fixed": "2.0.3"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.13",
+            "fixed": "1.1.13"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.5"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.2"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.0.3"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.13"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-3jxr-9vmj-r5cp",
+      "severity": "high",
+      "affectedRange": "<1.1.16",
+      "source": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+      "aliases": [
+        "CVE-2026-13149"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13149"
+      ],
+      "github": {
+        "cve": "CVE-2026-13149",
+        "updated": "2026-07-20T20:51:11Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 5.0.7",
+            "fixed": "5.0.7"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.16",
+            "fixed": "1.1.16"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.2",
+            "fixed": "2.1.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.7"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.16"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-mh99-v99m-4gvg",
+      "severity": "high",
+      "affectedRange": "<1.1.17",
+      "source": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+      "aliases": [
+        "CVE-2026-14257"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-14257"
+      ],
+      "github": {
+        "cve": "CVE-2026-14257",
+        "updated": "2026-07-31T19:37:57Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.8",
+            "fixed": "5.0.8"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.3",
+            "fixed": "3.0.3"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.3",
+            "fixed": "2.1.3"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.17",
+            "fixed": "1.1.17"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.8"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.3"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.3"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.17"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-rgw5-rvv9-x895",
+      "severity": "high",
+      "affectedRange": "<1.1.18",
+      "source": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+      "aliases": [
+        "CVE-2026-69152"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69152"
+      ],
+      "github": {
+        "cve": "CVE-2026-69152",
+        "updated": "2026-08-03T20:17:20Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.18",
+            "fixed": "1.1.18"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.4",
+            "fixed": "2.1.4"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.6",
+            "fixed": "3.0.6"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.9",
+            "fixed": "5.0.9"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.18"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.4"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.6"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.9"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-q2hr-2g5m-vwhr",
+      "severity": "moderate",
+      "affectedRange": "<1.1.21",
+      "source": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "aliases": [
+        "CVE-2026-102277"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102277"
+      ],
+      "github": {
+        "cve": "CVE-2026-102277",
+        "updated": "2026-09-29T23:45:39Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.12",
+            "fixed": "5.0.12"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.9",
+            "fixed": "3.0.9"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.7",
+            "fixed": "2.1.7"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.21",
+            "fixed": "1.1.21"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.12"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.9"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.7"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.21"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-qhr7-859c-m2p7",
+      "severity": "high",
+      "affectedRange": "<1.1.20",
+      "source": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "aliases": [
+        "CVE-2026-102278"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102278"
+      ],
+      "github": {
+        "cve": "CVE-2026-102278",
+        "updated": "2026-09-29T23:45:19Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.11",
+            "fixed": "5.0.11"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.8",
+            "fixed": "3.0.8"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.6",
+            "fixed": "2.1.6"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.20",
+            "fixed": "1.1.20"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.11"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.8"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.6"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.20"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "installed": [
+        "1.1.12"
+      ],
+      "updated": [
+        "1.1.21"
+      ],
+      "id": "GHSA-6j4f-fj2g-mc7p",
+      "severity": "high",
+      "affectedRange": "<1.1.19",
+      "source": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "aliases": [
+        "CVE-2026-102276"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102276"
+      ],
+      "github": {
+        "cve": "CVE-2026-102276",
+        "updated": "2026-09-29T23:44:59Z",
+        "fixes": [
+          {
+            "name": "brace-expansion",
+            "range": ">= 4.0.0, < 5.0.10",
+            "fixed": "5.0.10"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 3.0.0, < 3.0.7",
+            "fixed": "3.0.7"
+          },
+          {
+            "name": "brace-expansion",
+            "range": ">= 2.0.0, < 2.1.5",
+            "fixed": "2.1.5"
+          },
+          {
+            "name": "brace-expansion",
+            "range": "< 1.1.19",
+            "fixed": "1.1.19"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "5.0.10"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "3.0.7"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "2.1.5"
+          ]
+        },
+        {
+          "package": "brace-expansion",
+          "fixed": [
+            "1.1.19"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "browserslist",
+      "installed": [
+        "4.26.2"
+      ],
+      "updated": [
+        "4.29.4"
+      ],
+      "id": "GHSA-c83g-rgw3-j3cx",
+      "severity": "high",
+      "affectedRange": "<=4.28.6",
+      "source": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
+      "aliases": [
+        "CVE-2026-73089"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73089"
+      ],
+      "github": {
+        "cve": "CVE-2026-73089",
+        "updated": "2026-09-01T16:42:15Z",
+        "fixes": [
+          {
+            "name": "browserslist",
+            "range": "<= 4.28.6",
+            "fixed": "4.28.7"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "browserslist",
+          "fixed": [
+            "4.28.7"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "browserslist",
+      "installed": [
+        "4.26.2"
+      ],
+      "updated": [
+        "4.29.4"
+      ],
+      "id": "GHSA-73wf-gq98-2v4g",
+      "severity": "high",
+      "affectedRange": "<=4.28.6",
+      "source": "https://github.com/advisories/GHSA-73wf-gq98-2v4g",
+      "aliases": [
+        "CVE-2026-73088"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73088"
+      ],
+      "github": {
+        "cve": "CVE-2026-73088",
+        "updated": "2026-09-01T16:41:55Z",
+        "fixes": [
+          {
+            "name": "browserslist",
+            "range": "<= 4.28.6",
+            "fixed": "4.28.7"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "browserslist",
+          "fixed": [
+            "4.28.7"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "flatted",
+      "installed": [
+        "3.3.3"
+      ],
+      "updated": [
+        "3.4.4"
+      ],
+      "id": "GHSA-25h7-pfq9-p65f",
+      "severity": "high",
+      "affectedRange": "<3.4.0",
+      "source": "https://github.com/advisories/GHSA-25h7-pfq9-p65f",
+      "aliases": [
+        "CVE-2026-32141"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32141"
+      ],
+      "github": {
+        "cve": "CVE-2026-32141",
+        "updated": "2026-03-13T15:40:44Z",
+        "fixes": [
+          {
+            "name": "flatted",
+            "range": "< 3.4.0",
+            "fixed": "3.4.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "flatted",
+          "fixed": [
+            "3.4.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "flatted",
+      "installed": [
+        "3.3.3"
+      ],
+      "updated": [
+        "3.4.4"
+      ],
+      "id": "GHSA-rf6f-7fwh-wjgh",
+      "severity": "high",
+      "affectedRange": "<=3.4.1",
+      "source": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
+      "aliases": [
+        "CVE-2026-33228"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-33228"
+      ],
+      "github": {
+        "cve": "CVE-2026-33228",
+        "updated": "2026-10-05T15:48:47Z",
+        "fixes": [
+          {
+            "name": "flatted",
+            "range": "<= 3.4.1",
+            "fixed": "3.4.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "flatted",
+          "fixed": [
+            "3.4.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "installed": [
+        "4.1.0"
+      ],
+      "updated": [
+        "4.3.2"
+      ],
+      "id": "GHSA-mh29-5h37-fv8m",
+      "severity": "moderate",
+      "affectedRange": ">=4.0.0 <4.1.1",
+      "source": "https://github.com/advisories/GHSA-mh29-5h37-fv8m",
+      "aliases": [
+        "CVE-2025-64718"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-64718",
+        "https://github.com/advisories/GHSA-mh29-5h37-fv8m"
+      ],
+      "github": {
+        "cve": "CVE-2025-64718",
+        "updated": "2026-01-31T03:32:45Z",
+        "fixes": [
+          {
+            "name": "js-yaml",
+            "range": ">= 4.0.0, < 4.1.1",
+            "fixed": "4.1.1"
+          },
+          {
+            "name": "js-yaml",
+            "range": "< 3.14.2",
+            "fixed": "3.14.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "4.1.1"
+          ]
+        },
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "3.14.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "installed": [
+        "4.1.0"
+      ],
+      "updated": [
+        "4.3.2"
+      ],
+      "id": "GHSA-h67p-54hq-rp68",
+      "severity": "moderate",
+      "affectedRange": ">=4.0.0 <=4.1.1",
+      "source": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+      "aliases": [
+        "CVE-2026-53550"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53550"
+      ],
+      "github": {
+        "cve": "CVE-2026-53550",
+        "updated": "2026-06-29T15:06:00Z",
+        "fixes": [
+          {
+            "name": "js-yaml",
+            "range": ">= 4.0.0, <= 4.1.1",
+            "fixed": "4.2.0"
+          },
+          {
+            "name": "js-yaml",
+            "range": "< 3.15.0",
+            "fixed": "3.15.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "4.2.0"
+          ]
+        },
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "3.15.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "installed": [
+        "4.1.0"
+      ],
+      "updated": [
+        "4.3.2"
+      ],
+      "id": "GHSA-52cp-r559-cp3m",
+      "severity": "high",
+      "affectedRange": ">=4.0.0 <4.3.0",
+      "source": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+      "aliases": [
+        "CVE-2026-59869"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59869"
+      ],
+      "github": {
+        "cve": "CVE-2026-59869",
+        "updated": "2026-07-20T21:19:10Z",
+        "fixes": [
+          {
+            "name": "js-yaml",
+            "range": ">= 3.0.0, < 3.15.0",
+            "fixed": "3.15.0"
+          },
+          {
+            "name": "js-yaml",
+            "range": ">= 4.0.0, < 4.3.0",
+            "fixed": "4.3.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "3.15.0"
+          ]
+        },
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "4.3.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "installed": [
+        "4.1.0"
+      ],
+      "updated": [
+        "4.3.2"
+      ],
+      "id": "GHSA-5p4m-2wfm-xmqj",
+      "severity": "high",
+      "affectedRange": ">=4.0.0 <4.3.1",
+      "source": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+      "aliases": [],
+      "upstreamSources": [],
+      "github": {
+        "cve": null,
+        "updated": "2026-08-06T20:27:32Z",
+        "fixes": [
+          {
+            "name": "js-yaml",
+            "range": ">= 4.0.0, < 4.3.1",
+            "fixed": "4.3.1"
+          },
+          {
+            "name": "js-yaml",
+            "range": ">= 3.0.0, < 3.15.1",
+            "fixed": "3.15.1"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "4.3.1"
+          ]
+        },
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "3.15.1"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "installed": [
+        "4.1.0"
+      ],
+      "updated": [
+        "4.3.2"
+      ],
+      "id": "GHSA-2883-xcg3-v3hh",
+      "severity": "high",
+      "affectedRange": ">=4.0.0 <4.3.2",
+      "source": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+      "aliases": [
+        "CVE-2026-84375"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84375"
+      ],
+      "github": {
+        "cve": "CVE-2026-84375",
+        "updated": "2026-09-08T21:24:52Z",
+        "fixes": [
+          {
+            "name": "js-yaml",
+            "range": ">= 4.0.0, < 4.3.2",
+            "fixed": "4.3.2"
+          },
+          {
+            "name": "js-yaml",
+            "range": ">= 3.0.0, < 3.15.2",
+            "fixed": "3.15.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "4.3.2"
+          ]
+        },
+        {
+          "package": "js-yaml",
+          "fixed": [
+            "3.15.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "minimatch",
+      "installed": [
+        "3.1.2"
+      ],
+      "updated": [
+        "3.1.5"
+      ],
+      "id": "GHSA-3ppc-4f35-3m26",
+      "severity": "high",
+      "affectedRange": "<3.1.3",
+      "source": "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
+      "aliases": [
+        "CVE-2026-26996"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26996"
+      ],
+      "github": {
+        "cve": "CVE-2026-26996",
+        "updated": "2026-02-24T20:59:58Z",
+        "fixes": [
+          {
+            "name": "minimatch",
+            "range": ">= 10.0.0, < 10.2.1",
+            "fixed": "10.2.1"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 9.0.0, < 9.0.6",
+            "fixed": "9.0.6"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 8.0.0, < 8.0.5",
+            "fixed": "8.0.5"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 7.0.0, < 7.4.7",
+            "fixed": "7.4.7"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 6.0.0, < 6.2.1",
+            "fixed": "6.2.1"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 5.0.0, < 5.1.7",
+            "fixed": "5.1.7"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 4.0.0, < 4.2.4",
+            "fixed": "4.2.4"
+          },
+          {
+            "name": "minimatch",
+            "range": "< 3.1.3",
+            "fixed": "3.1.3"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "minimatch",
+          "fixed": [
+            "10.2.1"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "9.0.6"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "8.0.5"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "7.4.7"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "6.2.1"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "5.1.7"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "4.2.4"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "3.1.3"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "minimatch",
+      "installed": [
+        "3.1.2"
+      ],
+      "updated": [
+        "3.1.5"
+      ],
+      "id": "GHSA-7r86-cg39-jmmj",
+      "severity": "high",
+      "affectedRange": "<3.1.3",
+      "source": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+      "aliases": [
+        "CVE-2026-27903"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27903"
+      ],
+      "github": {
+        "cve": "CVE-2026-27903",
+        "updated": "2026-02-26T22:10:20Z",
+        "fixes": [
+          {
+            "name": "minimatch",
+            "range": ">= 10.0.0, < 10.2.3",
+            "fixed": "10.2.3"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 9.0.0, < 9.0.7",
+            "fixed": "9.0.7"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 8.0.0, < 8.0.6",
+            "fixed": "8.0.6"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 7.0.0, < 7.4.8",
+            "fixed": "7.4.8"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 6.0.0, < 6.2.2",
+            "fixed": "6.2.2"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 5.0.0, < 5.1.8",
+            "fixed": "5.1.8"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 4.0.0, < 4.2.5",
+            "fixed": "4.2.5"
+          },
+          {
+            "name": "minimatch",
+            "range": "< 3.1.3",
+            "fixed": "3.1.3"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "minimatch",
+          "fixed": [
+            "10.2.3"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "9.0.7"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "8.0.6"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "7.4.8"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "6.2.2"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "5.1.8"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "4.2.5"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "3.1.3"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "minimatch",
+      "installed": [
+        "3.1.2"
+      ],
+      "updated": [
+        "3.1.5"
+      ],
+      "id": "GHSA-23c5-xmqv-rm74",
+      "severity": "high",
+      "affectedRange": "<3.1.4",
+      "source": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+      "aliases": [
+        "CVE-2026-27904"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27904"
+      ],
+      "github": {
+        "cve": "CVE-2026-27904",
+        "updated": "2026-02-26T22:07:15Z",
+        "fixes": [
+          {
+            "name": "minimatch",
+            "range": ">= 10.0.0, < 10.2.3",
+            "fixed": "10.2.3"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 9.0.0, < 9.0.7",
+            "fixed": "9.0.7"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 8.0.0, < 8.0.6",
+            "fixed": "8.0.6"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 7.0.0, < 7.4.8",
+            "fixed": "7.4.8"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 6.0.0, < 6.2.2",
+            "fixed": "6.2.2"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 5.0.0, < 5.1.8",
+            "fixed": "5.1.8"
+          },
+          {
+            "name": "minimatch",
+            "range": ">= 4.0.0, < 4.2.5",
+            "fixed": "4.2.5"
+          },
+          {
+            "name": "minimatch",
+            "range": "< 3.1.4",
+            "fixed": "3.1.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "minimatch",
+          "fixed": [
+            "10.2.3"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "9.0.7"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "8.0.6"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "7.4.8"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "6.2.2"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "5.1.8"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "4.2.5"
+          ]
+        },
+        {
+          "package": "minimatch",
+          "fixed": [
+            "3.1.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "nanoid",
+      "installed": [
+        "3.3.11"
+      ],
+      "updated": [
+        "3.3.20"
+      ],
+      "id": "GHSA-28wg-ghj8-5hjv",
+      "severity": "high",
+      "affectedRange": "<3.3.16",
+      "source": "https://github.com/advisories/GHSA-28wg-ghj8-5hjv",
+      "aliases": [
+        "CVE-2026-67214"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67214"
+      ],
+      "github": {
+        "cve": "CVE-2026-67214",
+        "updated": "2026-08-07T20:53:01Z",
+        "fixes": [
+          {
+            "name": "nanoid",
+            "range": "< 3.3.16",
+            "fixed": "3.3.16"
+          },
+          {
+            "name": "nanoid",
+            "range": ">= 4.0.0, < 5.1.16",
+            "fixed": "5.1.16"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "nanoid",
+          "fixed": [
+            "3.3.16"
+          ]
+        },
+        {
+          "package": "nanoid",
+          "fixed": [
+            "5.1.16"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "nanoid",
+      "installed": [
+        "3.3.11"
+      ],
+      "updated": [
+        "3.3.20"
+      ],
+      "id": "GHSA-2v37-7h3g-55p8",
+      "severity": "high",
+      "affectedRange": "<3.3.18",
+      "source": "https://github.com/advisories/GHSA-2v37-7h3g-55p8",
+      "aliases": [
+        "CVE-2026-67213"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67213"
+      ],
+      "github": {
+        "cve": "CVE-2026-67213",
+        "updated": "2026-08-13T15:43:02Z",
+        "fixes": [
+          {
+            "name": "nanoid",
+            "range": ">= 4.0.0, < 5.1.6",
+            "fixed": "5.1.6"
+          },
+          {
+            "name": "nanoid",
+            "range": "< 3.3.18",
+            "fixed": "3.3.18"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "nanoid",
+          "fixed": [
+            "3.3.18"
+          ]
+        },
+        {
+          "package": "nanoid",
+          "fixed": [
+            "5.1.6"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "nanoid",
+      "installed": [
+        "3.3.11"
+      ],
+      "updated": [
+        "3.3.20"
+      ],
+      "id": "GHSA-xwg4-73v4-xw9w",
+      "severity": "high",
+      "affectedRange": "<3.3.12",
+      "source": "https://github.com/advisories/GHSA-xwg4-73v4-xw9w",
+      "aliases": [
+        "CVE-2026-73086"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73086"
+      ],
+      "github": {
+        "cve": "CVE-2026-73086",
+        "updated": "2026-09-01T19:23:46Z",
+        "fixes": [
+          {
+            "name": "nanoid",
+            "range": "< 3.3.12",
+            "fixed": "3.3.12"
+          },
+          {
+            "name": "nanoid",
+            "range": ">= 4.0.0, < 5.1.11",
+            "fixed": "5.1.11"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "nanoid",
+          "fixed": [
+            "3.3.12"
+          ]
+        },
+        {
+          "package": "nanoid",
+          "fixed": [
+            "5.1.11"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "picomatch",
+      "installed": [
+        "4.0.3"
+      ],
+      "updated": [
+        "4.0.7"
+      ],
+      "id": "GHSA-3v7f-55p6-f55p",
+      "severity": "moderate",
+      "affectedRange": ">=4.0.0 <4.0.4",
+      "source": "https://github.com/advisories/GHSA-3v7f-55p6-f55p",
+      "aliases": [
+        "CVE-2026-33672"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-33672"
+      ],
+      "github": {
+        "cve": "CVE-2026-33672",
+        "updated": "2026-03-27T21:36:25Z",
+        "fixes": [
+          {
+            "name": "picomatch",
+            "range": ">= 4.0.0, < 4.0.4",
+            "fixed": "4.0.4"
+          },
+          {
+            "name": "picomatch",
+            "range": ">= 3.0.0, < 3.0.2",
+            "fixed": "3.0.2"
+          },
+          {
+            "name": "picomatch",
+            "range": "< 2.3.2",
+            "fixed": "2.3.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "picomatch",
+          "fixed": [
+            "4.0.4"
+          ]
+        },
+        {
+          "package": "picomatch",
+          "fixed": [
+            "3.0.2"
+          ]
+        },
+        {
+          "package": "picomatch",
+          "fixed": [
+            "2.3.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "picomatch",
+      "installed": [
+        "4.0.3"
+      ],
+      "updated": [
+        "4.0.7"
+      ],
+      "id": "GHSA-c2c7-rcm5-vvqj",
+      "severity": "high",
+      "affectedRange": ">=4.0.0 <4.0.4",
+      "source": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+      "aliases": [
+        "CVE-2026-33671"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-33671"
+      ],
+      "github": {
+        "cve": "CVE-2026-33671",
+        "updated": "2026-03-27T21:36:14Z",
+        "fixes": [
+          {
+            "name": "picomatch",
+            "range": ">= 4.0.0, < 4.0.4",
+            "fixed": "4.0.4"
+          },
+          {
+            "name": "picomatch",
+            "range": ">= 3.0.0, < 3.0.2",
+            "fixed": "3.0.2"
+          },
+          {
+            "name": "picomatch",
+            "range": "< 2.3.2",
+            "fixed": "2.3.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "picomatch",
+          "fixed": [
+            "4.0.4"
+          ]
+        },
+        {
+          "package": "picomatch",
+          "fixed": [
+            "3.0.2"
+          ]
+        },
+        {
+          "package": "picomatch",
+          "fixed": [
+            "2.3.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "installed": [
+        "8.5.6"
+      ],
+      "updated": [
+        "8.5.31"
+      ],
+      "id": "GHSA-qx2v-qp2m-jg93",
+      "severity": "moderate",
+      "affectedRange": "<8.5.10",
+      "source": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+      "aliases": [
+        "CVE-2026-41305"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41305"
+      ],
+      "github": {
+        "cve": "CVE-2026-41305",
+        "updated": "2026-04-24T15:31:44Z",
+        "fixes": [
+          {
+            "name": "postcss",
+            "range": "< 8.5.10",
+            "fixed": "8.5.10"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "postcss",
+          "fixed": [
+            "8.5.10"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "installed": [
+        "8.5.6"
+      ],
+      "updated": [
+        "8.5.31"
+      ],
+      "id": "GHSA-6g55-p6wh-862q",
+      "severity": "high",
+      "affectedRange": "<=8.5.11",
+      "source": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+      "aliases": [
+        "CVE-2026-45623"
+      ],
+      "upstreamSources": [],
+      "github": {
+        "cve": "CVE-2026-45623",
+        "updated": "2026-07-23T15:06:17Z",
+        "fixes": [
+          {
+            "name": "postcss",
+            "range": "<= 8.5.11",
+            "fixed": "8.5.12"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "postcss",
+          "fixed": [
+            "8.5.12"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "installed": [
+        "8.5.6"
+      ],
+      "updated": [
+        "8.5.31"
+      ],
+      "id": "GHSA-fxqj-rqcc-2cmp",
+      "severity": "moderate",
+      "affectedRange": "<=8.5.22",
+      "source": "https://github.com/advisories/GHSA-fxqj-rqcc-2cmp",
+      "aliases": [
+        "CVE-2026-69153"
+      ],
+      "upstreamSources": [],
+      "github": {
+        "cve": "CVE-2026-69153",
+        "updated": "2026-08-03T17:11:40Z",
+        "fixes": [
+          {
+            "name": "postcss",
+            "range": "<= 8.5.22",
+            "fixed": "8.5.23"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "postcss",
+          "fixed": [
+            "8.5.23"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "installed": [
+        "8.5.6"
+      ],
+      "updated": [
+        "8.5.31"
+      ],
+      "id": "GHSA-r28c-9q8g-f849",
+      "severity": "high",
+      "affectedRange": "<=8.5.17",
+      "source": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+      "aliases": [
+        "CVE-2026-73646"
+      ],
+      "upstreamSources": [],
+      "github": {
+        "cve": "CVE-2026-73646",
+        "updated": "2026-08-13T17:55:56Z",
+        "fixes": [
+          {
+            "name": "postcss",
+            "range": "<= 8.5.17",
+            "fixed": "8.5.18"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "postcss",
+          "fixed": [
+            "8.5.18"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "installed": [
+        "4.50.2"
+      ],
+      "updated": [
+        "4.65.0"
+      ],
+      "id": "GHSA-mw96-cpmx-2vgc",
+      "severity": "high",
+      "affectedRange": ">=4.0.0 <4.59.0",
+      "source": "https://github.com/advisories/GHSA-mw96-cpmx-2vgc",
+      "aliases": [
+        "CVE-2026-27606"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27606"
+      ],
+      "github": {
+        "cve": "CVE-2026-27606",
+        "updated": "2026-02-25T22:37:27Z",
+        "fixes": [
+          {
+            "name": "rollup",
+            "range": "< 2.80.0",
+            "fixed": "2.80.0"
+          },
+          {
+            "name": "rollup",
+            "range": ">= 3.0.0, < 3.30.0",
+            "fixed": "3.30.0"
+          },
+          {
+            "name": "rollup",
+            "range": ">= 4.0.0, < 4.59.0",
+            "fixed": "4.59.0"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "rollup",
+          "fixed": [
+            "2.80.0"
+          ]
+        },
+        {
+          "package": "rollup",
+          "fixed": [
+            "3.30.0"
+          ]
+        },
+        {
+          "package": "rollup",
+          "fixed": [
+            "4.59.0"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "source-map-js",
+      "installed": [
+        "1.2.1"
+      ],
+      "updated": [
+        "1.2.2"
+      ],
+      "id": "GHSA-68fv-2mgg-jv7q",
+      "severity": "high",
+      "affectedRange": ">=1.0.0 <1.2.2",
+      "source": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+      "aliases": [
+        "CVE-2026-93749"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93749"
+      ],
+      "github": {
+        "cve": "CVE-2026-93749",
+        "updated": "2026-10-05T23:31:22Z",
+        "fixes": [
+          {
+            "name": "source-map-js",
+            "range": ">= 1.0.0, < 1.2.2",
+            "fixed": "1.2.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "source-map-js",
+          "fixed": [
+            "1.2.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-4w7w-66w2-5vf9",
+      "severity": "moderate",
+      "affectedRange": ">=7.0.0 <=7.3.1",
+      "source": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+      "aliases": [
+        "CVE-2026-39365"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-39365"
+      ],
+      "github": {
+        "cve": "CVE-2026-39365",
+        "updated": "2026-04-07T22:16:29Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.0.4",
+            "fixed": "8.0.5"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.1",
+            "fixed": "7.3.2"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.1",
+            "fixed": "6.4.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.0.5"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.2"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-v2wj-q39q-566r",
+      "severity": "high",
+      "affectedRange": ">=7.1.0 <=7.3.1",
+      "source": "https://github.com/advisories/GHSA-v2wj-q39q-566r",
+      "aliases": [
+        "CVE-2026-39364"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-39364"
+      ],
+      "github": {
+        "cve": "CVE-2026-39364",
+        "updated": "2026-04-07T22:16:19Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.0.4",
+            "fixed": "8.0.5"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.1.0, <= 7.3.1",
+            "fixed": "7.3.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.0.5"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-p9ff-h696-f583",
+      "severity": "high",
+      "affectedRange": ">=7.0.0 <=7.3.1",
+      "source": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+      "aliases": [
+        "CVE-2026-39363"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-39363"
+      ],
+      "github": {
+        "cve": "CVE-2026-39363",
+        "updated": "2026-04-07T22:16:11Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.0.4",
+            "fixed": "8.0.5"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.1",
+            "fixed": "7.3.2"
+          },
+          {
+            "name": "vite",
+            "range": ">= 6.0.0, <= 6.4.1",
+            "fixed": "6.4.2"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.0.5"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.2"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.2"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-v6wh-96g9-6wx3",
+      "severity": "moderate",
+      "affectedRange": ">=7.0.0 <=7.3.4",
+      "source": "https://github.com/advisories/GHSA-v6wh-96g9-6wx3",
+      "aliases": [
+        "CVE-2026-53632"
+      ],
+      "upstreamSources": [],
+      "github": {
+        "cve": "CVE-2026-53632",
+        "updated": "2026-06-15T17:18:32Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.0.15",
+            "fixed": "8.0.16"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.4",
+            "fixed": "7.3.5"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.2",
+            "fixed": "6.4.3"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.0.16"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.5"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.3"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-fx2h-pf6j-xcff",
+      "severity": "high",
+      "affectedRange": ">=7.0.0 <=7.3.4",
+      "source": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+      "aliases": [
+        "CVE-2026-53571"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53571"
+      ],
+      "github": {
+        "cve": "CVE-2026-53571",
+        "updated": "2026-07-15T22:05:54Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.0.15",
+            "fixed": "8.0.16"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.4",
+            "fixed": "7.3.5"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.2",
+            "fixed": "6.4.3"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.0.16"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.5"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.3"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-698v-4r3x-3vcv",
+      "severity": "moderate",
+      "affectedRange": ">=7.0.0 <=7.3.6",
+      "source": "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+      "aliases": [
+        "CVE-2026-112943"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112943"
+      ],
+      "github": {
+        "cve": "CVE-2026-112943",
+        "updated": "2026-10-20T18:30:25Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.3.0, <= 8.3.2",
+            "fixed": "8.3.3"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.2.0, <= 8.2.3",
+            "fixed": "8.2.4"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.1.5",
+            "fixed": "8.1.6"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.6",
+            "fixed": "7.3.7"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.3",
+            "fixed": "6.4.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.3.3"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.2.4"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.1.6"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.7"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-r825-w8mm-5pxw",
+      "severity": "moderate",
+      "affectedRange": ">=7.0.0 <=7.3.6",
+      "source": "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+      "aliases": [
+        "CVE-2026-112944"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112944"
+      ],
+      "github": {
+        "cve": "CVE-2026-112944",
+        "updated": "2026-10-20T19:51:54Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.3.0, <= 8.3.2",
+            "fixed": "8.3.3"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.2.0, <= 8.2.3",
+            "fixed": "8.2.4"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.1.5",
+            "fixed": "8.1.6"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.6",
+            "fixed": "7.3.7"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.3",
+            "fixed": "6.4.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.3.3"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.2.4"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.1.6"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.7"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-587h-7wmj-h5pm",
+      "severity": "high",
+      "affectedRange": ">=7.0.0 <=7.3.6",
+      "source": "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+      "aliases": [
+        "CVE-2026-112942"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112942"
+      ],
+      "github": {
+        "cve": "CVE-2026-112942",
+        "updated": "2026-10-20T19:48:26Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.3.0, <= 8.3.2",
+            "fixed": "8.3.3"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.2.0, <= 8.2.3",
+            "fixed": "8.2.4"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.1.5",
+            "fixed": "8.1.6"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.6",
+            "fixed": "7.3.7"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.3",
+            "fixed": "6.4.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.3.3"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.2.4"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.1.6"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.7"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-9jrq-w75r-8gcw",
+      "severity": "low",
+      "affectedRange": ">=7.0.0 <=7.3.6",
+      "source": "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+      "aliases": [
+        "CVE-2026-112945"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112945"
+      ],
+      "github": {
+        "cve": "CVE-2026-112945",
+        "updated": "2026-10-21T16:48:15Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.3.0, <= 8.3.2",
+            "fixed": "8.3.3"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.2.0, <= 8.2.3",
+            "fixed": "8.2.4"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.1.5",
+            "fixed": "8.1.6"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.6",
+            "fixed": "7.3.7"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.3",
+            "fixed": "6.4.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.3.3"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.2.4"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.1.6"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.7"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "installed": [
+        "7.2.7"
+      ],
+      "updated": [
+        "7.3.7"
+      ],
+      "id": "GHSA-rq7h-c2jc-7f22",
+      "severity": "moderate",
+      "affectedRange": ">=7.0.0 <=7.3.6",
+      "source": "https://github.com/advisories/GHSA-rq7h-c2jc-7f22",
+      "aliases": [
+        "CVE-2026-112946"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112946"
+      ],
+      "github": {
+        "cve": "CVE-2026-112946",
+        "updated": "2026-10-21T16:47:43Z",
+        "fixes": [
+          {
+            "name": "vite",
+            "range": ">= 8.3.0, <= 8.3.2",
+            "fixed": "8.3.3"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.2.0, <= 8.2.3",
+            "fixed": "8.2.4"
+          },
+          {
+            "name": "vite",
+            "range": ">= 8.0.0, <= 8.1.5",
+            "fixed": "8.1.6"
+          },
+          {
+            "name": "vite",
+            "range": ">= 7.0.0, <= 7.3.6",
+            "fixed": "7.3.7"
+          },
+          {
+            "name": "vite",
+            "range": "<= 6.4.3",
+            "fixed": "6.4.4"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "vite",
+          "fixed": [
+            "8.3.3"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.2.4"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "8.1.6"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "7.3.7"
+          ]
+        },
+        {
+          "package": "vite",
+          "fixed": [
+            "6.4.4"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "zod",
+      "installed": [
+        "4.1.13"
+      ],
+      "updated": [
+        "4.6.7"
+      ],
+      "id": "GHSA-mrhx-c7xc-m3w5",
+      "severity": "high",
+      "affectedRange": "<4.6.6",
+      "source": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+      "aliases": [
+        "CVE-2023-54404"
+      ],
+      "upstreamSources": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-54404"
+      ],
+      "github": {
+        "cve": "CVE-2023-54404",
+        "updated": "2026-10-23T18:26:52Z",
+        "fixes": [
+          {
+            "name": "zod",
+            "range": "< 4.6.6",
+            "fixed": "4.6.6"
+          }
+        ]
+      },
+      "osvFixes": [
+        {
+          "package": "zod",
+          "fixed": [
+            "4.6.6"
+          ]
+        }
+      ]
+    }
+  ],
+  "osv": {
+    "before": {
+      "packagesChecked": 240,
+      "matches": [
+        {
+          "name": "@babel/core",
+          "version": "7.28.5",
+          "vulns": [
+            {
+              "id": "GHSA-4x5r-pxfx-6jf8",
+              "modified": "2026-09-10T03:50:48.280629Z"
+            }
+          ]
+        },
+        {
+          "name": "@humanfs/node",
+          "version": "0.16.7",
+          "vulns": [
+            {
+              "id": "GHSA-p498-v437-472g",
+              "modified": "2026-09-10T03:50:54.516902Z"
+            }
+          ]
+        },
+        {
+          "name": "ajv",
+          "version": "6.12.6",
+          "vulns": [
+            {
+              "id": "GHSA-2g4f-4pwh-qvx6",
+              "modified": "2026-09-10T03:50:33.716487Z"
+            }
+          ]
+        },
+        {
+          "name": "baseline-browser-mapping",
+          "version": "2.8.4",
+          "vulns": [
+            {
+              "id": "GHSA-w5vr-8v7q-w6rv",
+              "modified": "2026-09-08T21:10:57.707771Z"
+            }
+          ]
+        },
+        {
+          "name": "brace-expansion",
+          "version": "1.1.12",
+          "vulns": [
+            {
+              "id": "GHSA-3jxr-9vmj-r5cp",
+              "modified": "2026-09-10T03:51:10.092354Z"
+            },
+            {
+              "id": "GHSA-6j4f-fj2g-mc7p",
+              "modified": "2026-09-30T00:00:03.836613Z"
+            },
+            {
+              "id": "GHSA-f886-m6hf-6m8v",
+              "modified": "2026-09-10T03:51:00.342356Z"
+            },
+            {
+              "id": "GHSA-mh99-v99m-4gvg",
+              "modified": "2026-09-10T03:50:12.282849Z"
+            },
+            {
+              "id": "GHSA-q2hr-2g5m-vwhr",
+              "modified": "2026-09-30T00:00:03.849541Z"
+            },
+            {
+              "id": "GHSA-qhr7-859c-m2p7",
+              "modified": "2026-09-30T00:00:04.402763Z"
+            },
+            {
+              "id": "GHSA-rgw5-rvv9-x895",
+              "modified": "2026-09-10T03:51:14.535270Z"
+            }
+          ]
+        },
+        {
+          "name": "browserslist",
+          "version": "4.26.2",
+          "vulns": [
+            {
+              "id": "GHSA-73wf-gq98-2v4g",
+              "modified": "2026-09-10T03:51:15.295037Z"
+            },
+            {
+              "id": "GHSA-c83g-rgw3-j3cx",
+              "modified": "2026-09-10T03:50:54.622936Z"
+            }
+          ]
+        },
+        {
+          "name": "flatted",
+          "version": "3.3.3",
+          "vulns": [
+            {
+              "id": "GHSA-25h7-pfq9-p65f",
+              "modified": "2026-09-10T03:50:36.276174Z"
+            },
+            {
+              "id": "GHSA-rf6f-7fwh-wjgh",
+              "modified": "2026-10-05T16:00:04.586755Z"
+            }
+          ]
+        },
+        {
+          "name": "js-yaml",
+          "version": "4.1.0",
+          "vulns": [
+            {
+              "id": "GHSA-2883-xcg3-v3hh",
+              "modified": "2026-09-08T21:30:05.575808Z"
+            },
+            {
+              "id": "GHSA-52cp-r559-cp3m",
+              "modified": "2026-09-10T03:50:12.263307Z"
+            },
+            {
+              "id": "GHSA-5p4m-2wfm-xmqj",
+              "modified": "2026-09-10T03:50:53.407436Z"
+            },
+            {
+              "id": "GHSA-h67p-54hq-rp68",
+              "modified": "2026-09-10T03:50:49.729923Z"
+            },
+            {
+              "id": "GHSA-mh29-5h37-fv8m",
+              "modified": "2026-09-10T03:50:58.469126Z"
+            }
+          ]
+        },
+        {
+          "name": "minimatch",
+          "version": "3.1.2",
+          "vulns": [
+            {
+              "id": "GHSA-23c5-xmqv-rm74",
+              "modified": "2026-09-10T03:50:59.274637Z"
+            },
+            {
+              "id": "GHSA-3ppc-4f35-3m26",
+              "modified": "2026-09-10T03:50:33.812431Z"
+            },
+            {
+              "id": "GHSA-7r86-cg39-jmmj",
+              "modified": "2026-09-10T03:50:34.376990Z"
+            }
+          ]
+        },
+        {
+          "name": "nanoid",
+          "version": "3.3.11",
+          "vulns": [
+            {
+              "id": "GHSA-28wg-ghj8-5hjv",
+              "modified": "2026-09-10T03:50:51.191256Z"
+            },
+            {
+              "id": "GHSA-2v37-7h3g-55p8",
+              "modified": "2026-09-10T03:50:51.243328Z"
+            },
+            {
+              "id": "GHSA-xwg4-73v4-xw9w",
+              "modified": "2026-09-01T19:30:08.615560Z"
+            }
+          ]
+        },
+        {
+          "name": "picomatch",
+          "version": "4.0.3",
+          "vulns": [
+            {
+              "id": "GHSA-3v7f-55p6-f55p",
+              "modified": "2026-09-10T03:50:36.949634Z"
+            },
+            {
+              "id": "GHSA-c2c7-rcm5-vvqj",
+              "modified": "2026-09-10T03:51:00.292614Z"
+            }
+          ]
+        },
+        {
+          "name": "postcss",
+          "version": "8.5.6",
+          "vulns": [
+            {
+              "id": "GHSA-6g55-p6wh-862q",
+              "modified": "2026-09-10T03:51:10.752909Z"
+            },
+            {
+              "id": "GHSA-fxqj-rqcc-2cmp",
+              "modified": "2026-09-10T03:50:53.572374Z"
+            },
+            {
+              "id": "GHSA-qx2v-qp2m-jg93",
+              "modified": "2026-09-10T03:51:02.916463Z"
+            },
+            {
+              "id": "GHSA-r28c-9q8g-f849",
+              "modified": "2026-09-10T03:50:52.854537Z"
+            }
+          ]
+        },
+        {
+          "name": "rollup",
+          "version": "4.50.2",
+          "vulns": [
+            {
+              "id": "GHSA-mw96-cpmx-2vgc",
+              "modified": "2026-09-10T03:50:35.380273Z"
+            }
+          ]
+        },
+        {
+          "name": "source-map-js",
+          "version": "1.2.1",
+          "vulns": [
+            {
+              "id": "GHSA-68fv-2mgg-jv7q",
+              "modified": "2026-10-05T23:45:07.974936Z"
+            }
+          ]
+        },
+        {
+          "name": "vite",
+          "version": "7.2.7",
+          "vulns": [
+            {
+              "id": "GHSA-4w7w-66w2-5vf9",
+              "modified": "2026-09-10T03:50:42.779400Z"
+            },
+            {
+              "id": "GHSA-587h-7wmj-h5pm",
+              "modified": "2026-10-20T20:00:04.608979Z"
+            },
+            {
+              "id": "GHSA-698v-4r3x-3vcv",
+              "modified": "2026-10-20T18:45:09.467993Z"
+            },
+            {
+              "id": "GHSA-9jrq-w75r-8gcw",
+              "modified": "2026-10-21T17:00:26.569382Z"
+            },
+            {
+              "id": "GHSA-fx2h-pf6j-xcff",
+              "modified": "2026-09-10T03:50:49.380121Z"
+            },
+            {
+              "id": "GHSA-p9ff-h696-f583",
+              "modified": "2026-09-10T03:51:02.521776Z"
+            },
+            {
+              "id": "GHSA-r825-w8mm-5pxw",
+              "modified": "2026-10-20T20:00:04.608907Z"
+            },
+            {
+              "id": "GHSA-rq7h-c2jc-7f22",
+              "modified": "2026-10-21T17:00:06.336868Z"
+            },
+            {
+              "id": "GHSA-v2wj-q39q-566r",
+              "modified": "2026-09-10T03:50:44.780128Z"
+            },
+            {
+              "id": "GHSA-v6wh-96g9-6wx3",
+              "modified": "2026-09-10T03:50:50.705036Z"
+            }
+          ]
+        },
+        {
+          "name": "zod",
+          "version": "4.1.13",
+          "vulns": [
+            {
+              "id": "GHSA-mrhx-c7xc-m3w5",
+              "modified": "2026-10-23T18:30:09.376405Z"
+            }
+          ]
+        }
+      ]
+    },
+    "after": {
+      "packagesChecked": 246,
+      "matches": []
+    }
+  },
+  "kev": {
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "catalogVersion": "2026.10.23",
+    "dateReleased": "2026-10-23T19:30:18.9209Z",
+    "count": 1756,
+    "sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70",
+    "matched": []
+  },
+  "node": {
+    "before": "22.18.0",
+    "tested": "22.23.4",
+    "source": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+    "octoberCVEsAffecting22": [
+      "CVE-2026-105482",
+      "CVE-2026-106069",
+      "CVE-2026-111497",
+      "CVE-2026-105481",
+      "CVE-2026-106072",
+      "CVE-2026-106074",
+      "CVE-2026-106073"
+    ],
+    "archiveSha256MatchesCurrentOfficialFile": true
+  },
+  "lockChanges": [
+    {
+      "package": "node_modules/@babel/code-frame",
+      "before": "7.27.1",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/compat-data",
+      "before": "7.28.4",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/core",
+      "before": "7.28.5",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/generator",
+      "before": "7.28.5",
+      "after": "7.29.8"
+    },
+    {
+      "package": "node_modules/@babel/helper-compilation-targets",
+      "before": "7.27.2",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helper-globals",
+      "before": "7.28.0",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helper-module-imports",
+      "before": "7.27.1",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helper-module-transforms",
+      "before": "7.28.3",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helper-string-parser",
+      "before": "7.27.1",
+      "after": "7.29.11"
+    },
+    {
+      "package": "node_modules/@babel/helper-validator-identifier",
+      "before": "7.28.5",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helper-validator-option",
+      "before": "7.27.1",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/helpers",
+      "before": "7.28.4",
+      "after": "7.29.10"
+    },
+    {
+      "package": "node_modules/@babel/parser",
+      "before": "7.28.5",
+      "after": "7.29.11"
+    },
+    {
+      "package": "node_modules/@babel/template",
+      "before": "7.27.2",
+      "after": "7.29.7"
+    },
+    {
+      "package": "node_modules/@babel/traverse",
+      "before": "7.28.5",
+      "after": "7.29.10"
+    },
+    {
+      "package": "node_modules/@babel/types",
+      "before": "7.28.5",
+      "after": "7.29.11"
+    },
+    {
+      "package": "node_modules/@esbuild/aix-ppc64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/android-arm",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/android-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/android-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/darwin-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/darwin-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/freebsd-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/freebsd-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-arm",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-ia32",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-loong64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-mips64el",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-ppc64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-riscv64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-s390x",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/linux-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/netbsd-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/netbsd-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/openbsd-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/openbsd-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/openharmony-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/sunos-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/win32-arm64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/win32-ia32",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@esbuild/win32-x64",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/@humanfs/core",
+      "before": "0.19.1",
+      "after": "0.19.2"
+    },
+    {
+      "package": "node_modules/@humanfs/node",
+      "before": "0.16.7",
+      "after": "0.16.8"
+    },
+    {
+      "package": "node_modules/@humanfs/types",
+      "before": null,
+      "after": "0.15.0"
+    },
+    {
+      "package": "node_modules/@napi-rs/lzma-linux-x64-gnu",
+      "before": null,
+      "after": "1.5.1"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-android-arm-eabi",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-android-arm64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-darwin-arm64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-darwin-x64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-freebsd-arm64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-freebsd-x64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-arm-gnueabihf",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-arm-musleabihf",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-arm64-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-arm64-musl",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-loong64-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-loong64-musl",
+      "before": null,
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-ppc64-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-ppc64-musl",
+      "before": null,
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-riscv64-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-riscv64-musl",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-s390x-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-x64-gnu",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-linux-x64-musl",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-openbsd-x64",
+      "before": null,
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-openharmony-arm64",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-win32-arm64-msvc",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-win32-ia32-msvc",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-win32-x64-gnu",
+      "before": null,
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@rollup/rollup-win32-x64-msvc",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/@types/estree",
+      "before": "1.0.8",
+      "after": "1.0.9"
+    },
+    {
+      "package": "node_modules/ajv",
+      "before": "6.12.6",
+      "after": "6.15.0"
+    },
+    {
+      "package": "node_modules/baseline-browser-mapping",
+      "before": "2.8.4",
+      "after": "2.11.32"
+    },
+    {
+      "package": "node_modules/brace-expansion",
+      "before": "1.1.12",
+      "after": "1.1.21"
+    },
+    {
+      "package": "node_modules/browserslist",
+      "before": "4.26.2",
+      "after": "4.29.4"
+    },
+    {
+      "package": "node_modules/caniuse-lite",
+      "before": "1.0.30001743",
+      "after": "1.0.30001819"
+    },
+    {
+      "package": "node_modules/electron-to-chromium",
+      "before": "1.5.220",
+      "after": "1.5.464"
+    },
+    {
+      "package": "node_modules/esbuild",
+      "before": "0.25.9",
+      "after": "0.28.2"
+    },
+    {
+      "package": "node_modules/flatted",
+      "before": "3.3.3",
+      "after": "3.4.4"
+    },
+    {
+      "package": "node_modules/js-yaml",
+      "before": "4.1.0",
+      "after": "4.3.2"
+    },
+    {
+      "package": "node_modules/minimatch",
+      "before": "3.1.2",
+      "after": "3.1.5"
+    },
+    {
+      "package": "node_modules/nanoid",
+      "before": "3.3.11",
+      "after": "3.3.20"
+    },
+    {
+      "package": "node_modules/node-releases",
+      "before": "2.0.21",
+      "after": "2.0.60"
+    },
+    {
+      "package": "node_modules/picomatch",
+      "before": "4.0.3",
+      "after": "4.0.7"
+    },
+    {
+      "package": "node_modules/postcss",
+      "before": "8.5.6",
+      "after": "8.5.31"
+    },
+    {
+      "package": "node_modules/rollup",
+      "before": "4.50.2",
+      "after": "4.65.0"
+    },
+    {
+      "package": "node_modules/source-map-js",
+      "before": "1.2.1",
+      "after": "1.2.2"
+    },
+    {
+      "package": "node_modules/update-browserslist-db",
+      "before": "1.1.3",
+      "after": "1.3.4"
+    },
+    {
+      "package": "node_modules/vite",
+      "before": "7.2.7",
+      "after": "7.3.7"
+    },
+    {
+      "package": "node_modules/zod",
+      "before": "4.1.13",
+      "after": "4.6.7"
+    }
+  ],
+  "npmAuditAfter": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "npmProductionAfter": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "localScan": {
+    "method": "Six signature families; current project files and all locally reachable Git blobs. No secret values output. No entropy guarantee or inaccessible remote history coverage.",
+    "commits": 27,
+    "gitBlobs": 55,
+    "historyFindings": [],
+    "currentFindings": [],
+    "projectSymlinks": [],
+    "projectLogs": []
+  },
+  "publicHead": {
+    "url": "https://fks-checkliste.vercel.app/",
+    "method": "HEAD",
+    "status": "HTTP/2 200 ",
+    "selectedHeaders": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Sat, 24 Oct 2026 13:54:34 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-vercel-cache": "HIT"
+    },
+    "limitations": "One start-page response only; no authenticated hosting configuration or deployment provenance checked."
+  },
+  "verification": {
+    "runtime": "22.23.4",
+    "npm": "10.9.9",
+    "build": "passed",
+    "lint": "passed",
+    "nodeTests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "browserScenarios": {
+      "passed": 11,
+      "failed": 0,
+      "runtimeErrors": 0,
+      "externalAppRequests": 0
+    },
+    "baselineReproductions": 3,
+    "typecheck": "not configured",
+    "diffCheck": "passed",
+    "cleanup": "All test HTTP servers closed and browser contexts disposed; verified owned Chrome main process PID 7992 terminated.",
+    "packageLockSha256": "380167459838b79683f1b78cce19dd6c568cb85e618c0ba4d6322934d5a5b7ea",
+    "buildArtifacts": [
+      {
+        "path": "dist/Logo.png",
+        "sha256": "d95695aaaad48e43335d8ad165beca4f79c2a5b0bcb36703c71a189907571db4"
+      },
+      {
+        "path": "dist/assets/Logo-B_eaABXC.png",
+        "sha256": "d95695aaaad48e43335d8ad165beca4f79c2a5b0bcb36703c71a189907571db4"
+      },
+      {
+        "path": "dist/assets/index-DuihWE-T.css",
+        "sha256": "168c8b1766689710d8d812d57538a47d384e437b3f8e4db6ab3d531efe02c04f"
+      },
+      {
+        "path": "dist/assets/index-k0fJUghk.js",
+        "sha256": "8010badbd33b35e771e53952ee9a4fc517b6327c486006f0c693d47e2b13b33d"
+      },
+      {
+        "path": "dist/index.html",
+        "sha256": "27dc4d47ca1187485c37a5745a58c1bcc281a0eb8b5ebe6b1fcb9d2bf14f34ba"
+      },
+      {
+        "path": "dist/robots.txt",
+        "sha256": "5016d758b8a292981e1299b1eee568721c40bf3c43293916629676df8f41a7e8"
+      },
+      {
+        "path": "dist/site.webmanifest",
+        "sha256": "766dbb04261f2ceface3655dd633d5f97789c48418b9e5187cea7cfe8ee1aa1c"
+      },
+      {
+        "path": "dist/sitemap.xml",
+        "sha256": "9ad535cc33ca91fcafdefe80a5b4782047765f627fe5ec3be85622cdedc1ee37"
+      },
+      {
+        "path": "dist/vite.svg",
+        "sha256": "4a748afd443918bb16591c834c401dae33e87861ab5dbad0811c3a3b4a9214fb"
+      }
+    ]
+  },
+  "baseCommit": "5353f91d4271545fa8a75065e66edf6818d5484a",
+  "branch": "security/review-2026-10-24"
+}

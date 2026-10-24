@@ -55,7 +55,7 @@ Basierend auf publizierten Cut-offs:
 
 ### ✔️ Datenschutzfreundlich  
 - Speichert **ausschließlich lokal** im Browser  
-- **Keine personenbezogenen Daten**, kein Tracking  
+- Keine Namens- oder Identifikationsfelder und kein Tracking im Anwendungscode; Antworten können dennoch vertrauliche Gesundheitsinformationen darstellen.
 
 ---
 
@@ -68,8 +68,12 @@ cd FCD-checklist
 ```
 
 ### 2. Abhängigkeiten installieren
+
+Node 22 ab **22.23.4** verwenden (`nvm install && nvm use`, falls nvm vorhanden).
+Die Version in `.nvmrc` ist der geprüfte Mindeststand; Sicherheitsupdates der 22er-Reihe weiter einspielen.
+
 ```bash
-npm install
+npm ci --ignore-scripts
 ```
 
 ### 3. Dev-Server starten
@@ -84,7 +88,11 @@ Läuft typischerweise unter:
 
 ## 🧹 Deployment auf Vercel
 
-Deployment erfolgt **automatisch**, sobald Änderungen in den GitHub Branch `main` gepusht werden.
+Laut bisherigem Projektablauf kann ein Push auf `main` ein Deployment auslösen.
+Die tatsächliche Git-Anbindung und Produktionskonfiguration müssen im Hostingprojekt geprüft werden.
+Nur `dist/` veröffentlichen; `dist-ssr/` dient ausschließlich dem Prerendern beim Build.
+`vercel.json` legt Ausgabeordner und Sicherheitsheader fest. Nach der Bereitstellung deren
+Wirksamkeit anhand der ausgelieferten Antworten prüfen. `vite preview` dient nur lokalen Vorschauen.
 
 Ablauf:
 ```bash
@@ -97,8 +105,28 @@ git push
 
 ## 🔒 Datenschutz
 
-Diese WebApp speichert **keine personenbezogenen Daten**.  
-Alle Eingaben verbleiben ausschließlich im Browser und werden **nicht übertragen**.
+Die App überträgt Antworten nicht an Server oder Dritte. Sie speichert den aktuellen
+Antwortsatz unverschlüsselt im LocalStorage desselben Browserprofils, bis er zurückgesetzt
+oder durch Browserfunktionen gelöscht wird. Vor einer neuen Beurteilung zurücksetzen.
+Es gibt keine Fallverwaltung und keinen Passwortschutz. Ein geschütztes Gerät und
+Browserprofil sind erforderlich, wenn Antworten einer Person zugeordnet werden können.
+
+Nur ein Tab kann den gemeinsamen Antwortsatz bearbeiten. Andere Tabs müssen nach dem
+Schließen des bearbeitenden Tabs neu geladen werden. Bei gesperrtem Speicher oder fehlender
+Web-Locks-Unterstützung zeigt die App an, dass Änderungen nur im Arbeitsspeicher bleiben.
+Der Hostinganbieter erhält beim Abruf technische Verbindungsdaten; seine Protokollierung
+wird von diesem Repository nicht kontrolliert. Ein Manifest ist vorhanden; einen Service
+Worker oder garantierten Offlinebetrieb implementiert diese App nicht.
+
+Prüfergebnisse und Übernahmeschritte: [SECURITY-REVIEW.md](SECURITY-REVIEW.md).
+Lokale Prüfungen mit der Laufzeit aus `.nvmrc`: `npm run build`, `npm test`, `npm run lint`.
+Für `npm run test:browser` einen separaten Chromium-Testprozess mit leerem Profil und
+Remote Debugging auf Loopback starten und dessen URL über `FCD_CDP_URL` übergeben
+(Standard `http://127.0.0.1:9235`). Der Test startet und beendet seinen lokalen HTTP-Server
+selbst und verwirft alle Browserkontexte mit den synthetischen Daten.
+Der zusätzliche Befehl `npm run test:dev-browser` prüft React StrictMode gegen
+einen laufenden lokalen Vite-Entwicklungsserver (`FCD_APP_URL`, standardmäßig
+`http://127.0.0.1:5178/`) mit demselben separaten Testbrowser.
 
 ---
 
